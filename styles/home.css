@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Slogan';
+    src: url('../assets/KidslandAvenue-mLM09.ttf') format('truetype');
+}
+
+* {
+    &,
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+  }
+#homeContainer{
+    display:grid;
+    box-sizing: border-box;
+    grid-template-columns: 450px 1fr;
+    /*background-color: rgba(0,0,0,.4);*/
+    border-radius: 30px;
+    align-items: center;
+    padding:20px;
+    height: 100%; /* Add this line */
+    max-height:300px;
+}
+#milkyWayAnim
+{
+    height:auto;
+    max-height:290px;
+}
+#banner
+{
+    display:flex;
+    width:100%;
+    height:100%;
+    max-height:300px;
+    justify-content: center;
+}
+#gallery{
+    display: flex;
+    gap:4vmin;
+    user-select:none;
+    position:relative;
+    left:29%;
+    right:29%;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 20px;  /* Add padding to ensure no content is touching the edges */
+    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+}
+#gallery>img{
+    width:39vmin;
+    height:56vmin;
+    object-fit:cover;
+    object-position: 100% center;}
+#sloganContainer
+{
+    display:flex;
+    flex-direction: column;
+    font-family: 'Slogan';
+    align-items: center;
+    font-size:3rem;
+    color:black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    
+    
+}
+@media only screen and (max-width: 1300px){
+    #content{
+        overflow-x: auto;
+    }
+}
+@media only screen and (max-width: 700px){
+
+    #sloganContainer{
+        font-size:1.4rem;
+        -webkit-text-stroke-width: .2px;
+    }
+    #milkyWayAnim{
+        max-height: 150px;
+    }
+    #homeContainer{
+        display:flex;
+        margin-top:0;
+    }
+    #gallery{
+        left:0;
+        right:0;
+    }
+@media only screen and (max-width: 920px),screen and (max-height: 420px)  {
+    #sloganContainer{
+        font-size:1.4rem;
+        -webkit-text-stroke-width: .2px;
+    }
+    #milkyWayAnim{
+        max-height: 150px;
+    }
+    #homeContainer{
+        display:flex;
+        margin-top:0;
+    }
+    #gallery{
+        left:0;
+        right:0;
+        padding-left:2300px;
+
+    }
+    #gallery>img{
+        width:70vmin;
+        height:100vmin;
+        object-fit:cover;
+        object-position: 100% center;
+    }
+
+}
+@media only screen and (max-width: 431px), screen and (max-height: 950px)
+{
+    #gallery{
+        margin-top:20px;
+        padding-left:1900px;
+        padding-bottom:50px;
+    }
+}
+@media only screen and (max-width: 420px), screen and (max-height: 930px)
+{
+    #homeContainer{
+        display:flex;
+    }
+    #gallery{
+        margin-top:20px;
+        padding-left:1800px;
+    }
+    }
+    #gallery>img{
+        width:70vmin;
+        height:100vmin;
+        object-fit:cover;
+        object-position: 100% center;
+
+    }
+    #content{
+        padding-bottom: 40px;
+
+    }
+}

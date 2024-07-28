@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Shiny';
+    src: url('../assets/Shiny.ttf') format('truetype');
+  }
+#header{
+    display:flex;
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+    width:100%;
+}
+#header-logo{
+    max-width:400px;
+    background: none;
+    position: absolute;
+    left:18%;
+    top:0;
+}
+#navBar{
+    display:flex;
+    justify-content: center;
+    gap:100px;
+    background-color: #BEACDB;
+    position:relative;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    min-height:130px;
+    align-items: center;
+}
+button{
+    background:none;
+    border:none;
+    font-family: 'Shiny';
+    font-size:4rem;
+    color:white;
+    display:inline-block;
+    max-height: 100px;
+    margin-top:20px;
+}
+button:hover{
+    text-decoration:underline;
+}
+#buttonContainer{
+    display:flex;
+    gap:50px;
+}
+@media only screen and (max-width: 1200px) {
+    #header-logo{
+        max-width:200px;
+        position: relative;
+        left:0;
+    }
+    #navBar{
+        flex-direction: column;
+        gap:0px;
+    }
+    button{
+        font-size:3rem;
+        margin-top:0;
+    }
+
+}
+@media only screen and (max-width: 700px) {
+    #header-logo{
+        max-width:200px;
+        position: relative;
+        left:0;
+    }
+    #navBar{
+        flex-direction: column;
+        gap:0px;
+    }
+    button{
+        font-size:3rem;
+        margin-top:0;
+    }
+}
+@media only screen and (max-width: 920px),screen and (max-height: 400px)  {
+    #header-logo{
+        max-width:200px;
+        position: relative;
+        left:0;
+    }
+    #navBar{
+        flex-direction: column;
+        gap:0px;
+    }
+    button{
+        font-size:3rem;
+        margin-top:0;
+    }
+}

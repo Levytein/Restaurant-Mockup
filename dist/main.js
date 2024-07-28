@@ -1,5 +1,27 @@
 (self["webpackChunkwebpack_demo"] = self["webpackChunkwebpack_demo"] || []).push([["main"],{
 
+/***/ "./functions/cleanSlate.js":
+/*!*********************************!*\
+  !*** ./functions/cleanSlate.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+
+
+const cleanSlate = ()=>
+{
+    document.getElementById("content").innerHTML=``;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cleanSlate);
+
+/***/ }),
+
 /***/ "./functions/firstLoad.js":
 /*!********************************!*\
   !*** ./functions/firstLoad.js ***!
@@ -15,16 +37,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/menu */ "./pages/menu.js");
 
 
-
 const firstLoad = (() => {
   const header = (0,_header__WEBPACK_IMPORTED_MODULE_0__["default"])();
   const menu = (0,_pages_menu__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  const footer = footerDiv();
   document.body.prepend(header);
   document.getElementById("content").appendChild(menu);
-  return firstLoad;
+  
 });
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (firstLoad);
+
+/***/ }),
+
+/***/ "./functions/footer.js":
+/*!*****************************!*\
+  !*** ./functions/footer.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _assets_milkywayrun_gif__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/milkywayrun.gif */ "./assets/milkywayrun.gif");
+
+const footerDiv = (() => {
+  const footer = document.createElement("div");
+  footer.id = "footer";
+
+ 
+
+  const milkywayRunImg = document.createElement("img");
+  milkywayRunImg.src = _assets_milkywayrun_gif__WEBPACK_IMPORTED_MODULE_0__;
+  milkywayRunImg.id = "milkyRun";
+  footer.appendChild(milkywayRunImg);
+  
+  document.body.appendChild(footer);
+
+  return footer;
+});
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (footerDiv);
+
 
 /***/ }),
 
@@ -46,30 +102,107 @@ const headerDiv = (() => {
   const header = document.createElement("div");
   header.id = "header";
 
+ 
+
+  const navigationContainer = document.createElement("div");
+  navigationContainer.id = 'navBar';
+
+  const logoContainer = document.createElement("div");
   const headerLogo = document.createElement("img");
   headerLogo.src = _assets_Cookie_run_logo_png__WEBPACK_IMPORTED_MODULE_0__;
   headerLogo.id = "header-logo";
-  header.appendChild(headerLogo);
+  logoContainer.appendChild(headerLogo);
+  navigationContainer.appendChild(logoContainer);
 
+  const buttonContainer = document.createElement("div");
+  buttonContainer.id ="buttonContainer";
   const homeButton = document.createElement("button");
   homeButton.textContent = "Home";
   homeButton.id = "homeButton";
-  header.appendChild(homeButton);
+  buttonContainer.appendChild(homeButton);
 
   const menuButton = document.createElement("button");
   menuButton.textContent = "Menu";
   menuButton.id = "menuButton";
-  header.appendChild(menuButton);
+  buttonContainer.appendChild(menuButton);
 
   const aboutButton = document.createElement("button");
   aboutButton.textContent = "About";
   aboutButton.id = "aboutButton";
-  header.appendChild(aboutButton);
+  buttonContainer.appendChild(aboutButton);
+  navigationContainer.appendChild(buttonContainer);
 
+
+  header.appendChild(navigationContainer);
   return header;
 });
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerDiv);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./styles/footer.css":
+/*!*****************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./styles/footer.css ***!
+  \*****************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `#footer{
+    background-color:#1B1926;
+    width:100%;
+    position: sticky;
+}
+#milkyRun{
+    position: relative;
+    max-height:100px;
+    height:auto;
+    animation: linear infinite;
+    animation-name: run;
+    animation-duration: 12s;
+}
+
+@keyframes run {
+    0% {
+        left: 0;
+      }
+      48% {
+        transform: rotateY(0deg); 
+      }
+      50% { 
+        left: calc(100% - 130px); 
+        transform: rotateY(180deg); 
+       }
+       98% {
+        transform: rotateY(180deg); 
+      }
+      100% {
+        left: 0;
+        transform: rotateY(0deg);     
+      }
+  }
+
+  @media only screen and (max-width: 700px) {
+    #milkyRun{
+        max-height:50px;
+    }
+}`, "",{"version":3,"sources":["webpack://./styles/footer.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,UAAU;IACV,gBAAgB;AACpB;AACA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,WAAW;IACX,0BAA0B;IAC1B,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI;QACI,OAAO;MACT;MACA;QACE,wBAAwB;MAC1B;MACA;QACE,wBAAwB;QACxB,0BAA0B;OAC3B;OACA;QACC,0BAA0B;MAC5B;MACA;QACE,OAAO;QACP,wBAAwB;MAC1B;EACJ;;EAEA;IACE;QACI,eAAe;IACnB;AACJ","sourcesContent":["#footer{\r\n    background-color:#1B1926;\r\n    width:100%;\r\n    position: sticky;\r\n}\r\n#milkyRun{\r\n    position: relative;\r\n    max-height:100px;\r\n    height:auto;\r\n    animation: linear infinite;\r\n    animation-name: run;\r\n    animation-duration: 12s;\r\n}\r\n\r\n@keyframes run {\r\n    0% {\r\n        left: 0;\r\n      }\r\n      48% {\r\n        transform: rotateY(0deg); \r\n      }\r\n      50% { \r\n        left: calc(100% - 130px); \r\n        transform: rotateY(180deg); \r\n       }\r\n       98% {\r\n        transform: rotateY(180deg); \r\n      }\r\n      100% {\r\n        left: 0;\r\n        transform: rotateY(0deg);     \r\n      }\r\n  }\r\n\r\n  @media only screen and (max-width: 700px) {\r\n    #milkyRun{\r\n        max-height:50px;\r\n    }\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
@@ -104,22 +237,270 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
     src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format('truetype');
   }
 #header{
-    display:grid;
-    grid-template-columns: 1fr 3fr 3fr 3fr;
-    background:black;
+    display:flex;
+    box-sizing:border-box;
     padding:0;
     margin:0;
+    width:100%;
 }
 #header-logo{
     max-width:400px;
+    background: none;
+    position: absolute;
+    left:18%;
+    top:0;
+}
+#navBar{
+    display:flex;
+    justify-content: center;
+    gap:100px;
+    background-color: #BEACDB;
+    position:relative;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    min-height:130px;
+    align-items: center;
 }
 button{
     background:none;
     border:none;
     font-family: 'Shiny';
-    font-size:5rem;
+    font-size:4rem;
     color:white;
-}`, "",{"version":3,"sources":["webpack://./styles/header.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;AACF;IACI,YAAY;IACZ,sCAAsC;IACtC,gBAAgB;IAChB,SAAS;IACT,QAAQ;AACZ;AACA;IACI,eAAe;AACnB;AACA;IACI,eAAe;IACf,WAAW;IACX,oBAAoB;IACpB,cAAc;IACd,WAAW;AACf","sourcesContent":["@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n#header{\r\n    display:grid;\r\n    grid-template-columns: 1fr 3fr 3fr 3fr;\r\n    background:black;\r\n    padding:0;\r\n    margin:0;\r\n}\r\n#header-logo{\r\n    max-width:400px;\r\n}\r\nbutton{\r\n    background:none;\r\n    border:none;\r\n    font-family: 'Shiny';\r\n    font-size:5rem;\r\n    color:white;\r\n}"],"sourceRoot":""}]);
+    display:inline-block;
+    max-height: 100px;
+    margin-top:20px;
+}
+button:hover{
+    text-decoration:underline;
+}
+#buttonContainer{
+    display:flex;
+    gap:50px;
+}
+@media only screen and (max-width: 1200px) {
+    #header-logo{
+        max-width:200px;
+        position: relative;
+        left:0;
+    }
+    #navBar{
+        flex-direction: column;
+        gap:0px;
+    }
+    button{
+        font-size:3rem;
+        margin-top:0;
+    }
+
+}
+@media only screen and (max-width: 700px) {
+    #header-logo{
+        max-width:200px;
+        position: relative;
+        left:0;
+    }
+    #navBar{
+        flex-direction: column;
+        gap:0px;
+    }
+    button{
+        font-size:3rem;
+        margin-top:0;
+    }
+}
+@media only screen and (max-width: 920px),screen and (max-height: 400px)  {
+    #header-logo{
+        max-width:200px;
+        position: relative;
+        left:0;
+    }
+    #navBar{
+        flex-direction: column;
+        gap:0px;
+    }
+    button{
+        font-size:3rem;
+        margin-top:0;
+    }
+}`, "",{"version":3,"sources":["webpack://./styles/header.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;AACF;IACI,YAAY;IACZ,qBAAqB;IACrB,SAAS;IACT,QAAQ;IACR,UAAU;AACd;AACA;IACI,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,QAAQ;IACR,KAAK;AACT;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,SAAS;IACT,yBAAyB;IACzB,iBAAiB;IACjB,UAAU;IACV,gBAAgB;IAChB,iBAAiB;IACjB,gBAAgB;IAChB,mBAAmB;AACvB;AACA;IACI,eAAe;IACf,WAAW;IACX,oBAAoB;IACpB,cAAc;IACd,WAAW;IACX,oBAAoB;IACpB,iBAAiB;IACjB,eAAe;AACnB;AACA;IACI,yBAAyB;AAC7B;AACA;IACI,YAAY;IACZ,QAAQ;AACZ;AACA;IACI;QACI,eAAe;QACf,kBAAkB;QAClB,MAAM;IACV;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;;AAEJ;AACA;IACI;QACI,eAAe;QACf,kBAAkB;QAClB,MAAM;IACV;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,eAAe;QACf,kBAAkB;QAClB,MAAM;IACV;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n#header{\r\n    display:flex;\r\n    box-sizing:border-box;\r\n    padding:0;\r\n    margin:0;\r\n    width:100%;\r\n}\r\n#header-logo{\r\n    max-width:400px;\r\n    background: none;\r\n    position: absolute;\r\n    left:18%;\r\n    top:0;\r\n}\r\n#navBar{\r\n    display:flex;\r\n    justify-content: center;\r\n    gap:100px;\r\n    background-color: #BEACDB;\r\n    position:relative;\r\n    width:100%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    min-height:130px;\r\n    align-items: center;\r\n}\r\nbutton{\r\n    background:none;\r\n    border:none;\r\n    font-family: 'Shiny';\r\n    font-size:4rem;\r\n    color:white;\r\n    display:inline-block;\r\n    max-height: 100px;\r\n    margin-top:20px;\r\n}\r\nbutton:hover{\r\n    text-decoration:underline;\r\n}\r\n#buttonContainer{\r\n    display:flex;\r\n    gap:50px;\r\n}\r\n@media only screen and (max-width: 1200px) {\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n        left:0;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n\r\n}\r\n@media only screen and (max-width: 700px) {\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n        left:0;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 920px),screen and (max-height: 400px)  {\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n        left:0;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./styles/home.css":
+/*!***************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./styles/home.css ***!
+  \***************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/KidslandAvenue-mLM09.ttf */ "./assets/KidslandAvenue-mLM09.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
+    font-family: 'Slogan';
+    src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format('truetype');
+}
+
+* {
+    &,
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+  }
+#homeContainer{
+    display:grid;
+    box-sizing: border-box;
+    grid-template-columns: 450px 1fr;
+    /*background-color: rgba(0,0,0,.4);*/
+    border-radius: 30px;
+    align-items: center;
+    padding:20px;
+    height: 100%; /* Add this line */
+    max-height:300px;
+}
+#milkyWayAnim
+{
+    height:auto;
+    max-height:290px;
+}
+#banner
+{
+    display:flex;
+    width:100%;
+    height:100%;
+    max-height:300px;
+    justify-content: center;
+}
+#gallery{
+    display: flex;
+    gap:4vmin;
+    user-select:none;
+    position:relative;
+    left:29%;
+    right:29%;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 20px;  /* Add padding to ensure no content is touching the edges */
+    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+}
+#gallery>img{
+    width:39vmin;
+    height:56vmin;
+    object-fit:cover;
+    object-position: 100% center;}
+#sloganContainer
+{
+    display:flex;
+    flex-direction: column;
+    font-family: 'Slogan';
+    align-items: center;
+    font-size:3rem;
+    color:black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    
+    
+}
+@media only screen and (max-width: 1300px){
+    #content{
+        overflow-x: auto;
+    }
+}
+@media only screen and (max-width: 700px){
+
+    #sloganContainer{
+        font-size:1.4rem;
+        -webkit-text-stroke-width: .2px;
+    }
+    #milkyWayAnim{
+        max-height: 150px;
+    }
+    #homeContainer{
+        display:flex;
+        margin-top:0;
+    }
+    #gallery{
+        left:0;
+        right:0;
+    }
+@media only screen and (max-width: 920px),screen and (max-height: 420px)  {
+    #sloganContainer{
+        font-size:1.4rem;
+        -webkit-text-stroke-width: .2px;
+    }
+    #milkyWayAnim{
+        max-height: 150px;
+    }
+    #homeContainer{
+        display:flex;
+        margin-top:0;
+    }
+    #gallery{
+        left:0;
+        right:0;
+        padding-left:2300px;
+
+    }
+    #gallery>img{
+        width:70vmin;
+        height:100vmin;
+        object-fit:cover;
+        object-position: 100% center;
+    }
+
+}
+@media only screen and (max-width: 431px), screen and (max-height: 950px)
+{
+    #gallery{
+        margin-top:20px;
+        padding-left:1900px;
+        padding-bottom:50px;
+    }
+}
+@media only screen and (max-width: 420px), screen and (max-height: 930px)
+{
+    #homeContainer{
+        display:flex;
+    }
+    #gallery{
+        margin-top:20px;
+        padding-left:1800px;
+    }
+    }
+    #gallery>img{
+        width:70vmin;
+        height:100vmin;
+        object-fit:cover;
+        object-position: 100% center;
+
+    }
+    #content{
+        padding-bottom: 40px;
+
+    }
+}
+`, "",{"version":3,"sources":["webpack://./styles/home.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,+DAAiE;AACrE;;AAEA;IACI;;;MAGE,sBAAsB;IACxB;EACF;AACF;IACI,YAAY;IACZ,sBAAsB;IACtB,gCAAgC;IAChC,oCAAoC;IACpC,mBAAmB;IACnB,mBAAmB;IACnB,YAAY;IACZ,YAAY,EAAE,kBAAkB;IAChC,gBAAgB;AACpB;AACA;;IAEI,WAAW;IACX,gBAAgB;AACpB;AACA;;IAEI,YAAY;IACZ,UAAU;IACV,WAAW;IACX,gBAAgB;IAChB,uBAAuB;AAC3B;AACA;IACI,aAAa;IACb,SAAS;IACT,gBAAgB;IAChB,iBAAiB;IACjB,QAAQ;IACR,SAAS;IACT,uBAAuB;IACvB,WAAW;IACX,aAAa,GAAG,2DAA2D;IAC3E,sBAAsB,GAAG,uEAAuE;AACpG;AACA;IACI,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,4BAA4B,CAAC;AACjC;;IAEI,YAAY;IACZ,sBAAsB;IACtB,qBAAqB;IACrB,mBAAmB;IACnB,cAAc;IACd,WAAW;IACX,8BAA8B;IAC9B,gCAAgC;;;AAGpC;AACA;IACI;QACI,gBAAgB;IACpB;AACJ;AACA;;IAEI;QACI,gBAAgB;QAChB,+BAA+B;IACnC;IACA;QACI,iBAAiB;IACrB;IACA;QACI,YAAY;QACZ,YAAY;IAChB;IACA;QACI,MAAM;QACN,OAAO;IACX;AACJ;IACI;QACI,gBAAgB;QAChB,+BAA+B;IACnC;IACA;QACI,iBAAiB;IACrB;IACA;QACI,YAAY;QACZ,YAAY;IAChB;IACA;QACI,MAAM;QACN,OAAO;QACP,mBAAmB;;IAEvB;IACA;QACI,YAAY;QACZ,cAAc;QACd,gBAAgB;QAChB,4BAA4B;IAChC;;AAEJ;AACA;;IAEI;QACI,eAAe;QACf,mBAAmB;QACnB,mBAAmB;IACvB;AACJ;AACA;;IAEI;QACI,YAAY;IAChB;IACA;QACI,eAAe;QACf,mBAAmB;IACvB;IACA;IACA;QACI,YAAY;QACZ,cAAc;QACd,gBAAgB;QAChB,4BAA4B;;IAEhC;IACA;QACI,oBAAoB;;IAExB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Slogan';\r\n    src: url('../assets/KidslandAvenue-mLM09.ttf') format('truetype');\r\n}\r\n\r\n* {\r\n    &,\r\n    &::before,\r\n    &::after {\r\n      box-sizing: border-box;\r\n    }\r\n  }\r\n#homeContainer{\r\n    display:grid;\r\n    box-sizing: border-box;\r\n    grid-template-columns: 450px 1fr;\r\n    /*background-color: rgba(0,0,0,.4);*/\r\n    border-radius: 30px;\r\n    align-items: center;\r\n    padding:20px;\r\n    height: 100%; /* Add this line */\r\n    max-height:300px;\r\n}\r\n#milkyWayAnim\r\n{\r\n    height:auto;\r\n    max-height:290px;\r\n}\r\n#banner\r\n{\r\n    display:flex;\r\n    width:100%;\r\n    height:100%;\r\n    max-height:300px;\r\n    justify-content: center;\r\n}\r\n#gallery{\r\n    display: flex;\r\n    gap:4vmin;\r\n    user-select:none;\r\n    position:relative;\r\n    left:29%;\r\n    right:29%;\r\n    justify-content: center;\r\n    gap: 1.5rem;\r\n    padding: 20px;  /* Add padding to ensure no content is touching the edges */\r\n    box-sizing: border-box;  /* Include padding and border in the element's total width and height */\r\n}\r\n#gallery>img{\r\n    width:39vmin;\r\n    height:56vmin;\r\n    object-fit:cover;\r\n    object-position: 100% center;}\r\n#sloganContainer\r\n{\r\n    display:flex;\r\n    flex-direction: column;\r\n    font-family: 'Slogan';\r\n    align-items: center;\r\n    font-size:3rem;\r\n    color:black;\r\n    -webkit-text-stroke-width: 1px;\r\n    -webkit-text-stroke-color: white;\r\n    \r\n    \r\n}\r\n@media only screen and (max-width: 1300px){\r\n    #content{\r\n        overflow-x: auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 700px){\r\n\r\n    #sloganContainer{\r\n        font-size:1.4rem;\r\n        -webkit-text-stroke-width: .2px;\r\n    }\r\n    #milkyWayAnim{\r\n        max-height: 150px;\r\n    }\r\n    #homeContainer{\r\n        display:flex;\r\n        margin-top:0;\r\n    }\r\n    #gallery{\r\n        left:0;\r\n        right:0;\r\n    }\r\n@media only screen and (max-width: 920px),screen and (max-height: 420px)  {\r\n    #sloganContainer{\r\n        font-size:1.4rem;\r\n        -webkit-text-stroke-width: .2px;\r\n    }\r\n    #milkyWayAnim{\r\n        max-height: 150px;\r\n    }\r\n    #homeContainer{\r\n        display:flex;\r\n        margin-top:0;\r\n    }\r\n    #gallery{\r\n        left:0;\r\n        right:0;\r\n        padding-left:2300px;\r\n\r\n    }\r\n    #gallery>img{\r\n        width:70vmin;\r\n        height:100vmin;\r\n        object-fit:cover;\r\n        object-position: 100% center;\r\n    }\r\n\r\n}\r\n@media only screen and (max-width: 431px), screen and (max-height: 950px)\r\n{\r\n    #gallery{\r\n        margin-top:20px;\r\n        padding-left:1900px;\r\n        padding-bottom:50px;\r\n    }\r\n}\r\n@media only screen and (max-width: 420px), screen and (max-height: 930px)\r\n{\r\n    #homeContainer{\r\n        display:flex;\r\n    }\r\n    #gallery{\r\n        margin-top:20px;\r\n        padding-left:1800px;\r\n    }\r\n    }\r\n    #gallery>img{\r\n        width:70vmin;\r\n        height:100vmin;\r\n        object-fit:cover;\r\n        object-position: 100% center;\r\n\r\n    }\r\n    #content{\r\n        padding-bottom: 40px;\r\n\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -152,14 +533,12 @@ var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/Queensides-3z7Ey.ttf */ "./assets/Queensides-3z7Ey.ttf"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/QueensidesLight-ZVj3l.ttf */ "./assets/QueensidesLight-ZVj3l.ttf"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/QueensidesMedium-x30zV.ttf */ "./assets/QueensidesMedium-x30zV.ttf"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/bg.png */ "./assets/bg.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
 var ___CSS_LOADER_URL_REPLACEMENT_4___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_4___);
-var ___CSS_LOADER_URL_REPLACEMENT_5___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_5___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
     font-family: 'Cartoon';
@@ -174,61 +553,241 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
      url(${___CSS_LOADER_URL_REPLACEMENT_4___});
 
 }
-body{
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_5___});
+html,body{
+    
+    height:100%;
     padding:0;
     margin: 0;
 }
+body{
+    overflow-x:hidden;
+}
 #content{
     display:flex;
+    flex-direction: column;
     width:100%;
     align-items: center;
     justify-content: center;
+    background-color: #EAD8ED ;
+    height: fit-content; /* Add this line */
 }
 #menuContainer{
     display:grid;
     grid-template-columns: 2fr 2fr;
-    width:70%;
-    margin-top: 50px;
+    grid-template-rows:250px auto;
+    width:60%;
+    margin: 20px auto; /* Center the container */ 
     background-color: #EAD8ED;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     justify-content: center;
-}
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 10px solid #5c62a5;
+    background-color: #F5EBE0;
+    
+}   
 #foodText{
     display:flex;
+    box-sizing: border-box; 
+    text-align: left;
+    flex-direction: column;
+    font-family: 'Cartoon';
+    font-size: 4.2rem;
+    color:#6F515F;
+    justify-content: center;
+    border-bottom: 3px dotted #5c62a5;
+    margin-left:1px; /*To prevent double borders from overlapping too harshly*/
+    padding-bottom:30px;
+}
+#foodTextLast{
+    display:flex;
+    box-sizing: border-box; 
     text-align: left;
     flex-direction: column;
     margin-top:1.2rem;
     font-family: 'Cartoon';
-    font-size: 3.2rem;
+    font-size: 4.2rem;
     color:#6F515F;
     justify-content: center;
+    margin-left:1px; /*To prevent double borders from overlapping too harshly*/
+    padding-bottom:20px;
 }
-#cookieOne{
+#foodPic{
     height:auto;
-    max-height: 300px;
-    
+    max-height: 250px;
+    margin-top: 1.2rem;
+    /* filter: drop-shadow(0 0 0.10rem blue); */
+
 }
-#cookieContainer{
+#cookieContainerL{
     display:flex;
     justify-content: center;
+    position:relative;
+    border-bottom: 3px dotted #5c62a5;
+    margin-right:1px;
+    padding-bottom:20px;
+    /*min-height:342px;*/
 }
+#cookieContainerR{
+    display:flex;
+    justify-content: center;
+    position:relative;
+    border-bottom: 3px dotted #5c62a5;
+    margin-left:1px;
+    /*min-height:342px;*/}
 
-#foodTextMoonlight
+#foodTextL,#foodTextLast
 {
     text-align:left;
-    margin-top:1.2rem;
+    box-sizing: border-box; 
+    margin-top:55px;
     font-family: 'Cartoon';
-    font-size: 2.6rem;
+    font-size: 4.2rem;
     color:#6F515F;
-    margin-left:5%;
+    padding-left:20px;
+    border-bottom: 3px dotted #5c62a5;
+    box-sizing: border-box; 
+    margin-right:1px; /*To prevent double borders from overlapping too harshly*/
+    padding-bottom:20px;
+}
+#foodTextLast{
+    border:none;
 }
 #description{
+    font-size: 2rem;
+    font-family: 'Description';
+    color:black;
+}
+#foodTwo{
+    height:auto;
+    max-height: 300px;
+    margin-top: 1.2rem;
+}
+#stamp{
+    max-height:120px;
+    position:absolute;
+    top:0;
+    left:50px;
+}
+#foodPicStardust{
+    height:auto;
+    max-height: 200px;
+    margin-top: 5rem;
+    /* filter: drop-shadow(0 0 0.10rem blue); */
+
+}
+#stampStardust{
+    max-height:120px;
+    position:absolute;
+    top:0;
+    left:50px;
+}
+#descriptionLast{
     font-size: 1.5rem;
     font-family: 'Description';
     color:black;
-}`, "",{"version":3,"sources":["webpack://./styles/styles.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;IACtB;4CAC2C;EAC7C;;AAEF;IACI,0BAA0B;IAC1B;;4CAE4C;;AAEhD;AACA;IACI,yDAAuC;IACvC,SAAS;IACT,SAAS;AACb;AACA;IACI,YAAY;IACZ,UAAU;IACV,mBAAmB;IACnB,uBAAuB;AAC3B;AACA;IACI,YAAY;IACZ,8BAA8B;IAC9B,SAAS;IACT,gBAAgB;IAChB,yBAAyB;IACzB,mBAAmB;IACnB,4EAA4E;IAC5E,uBAAuB;AAC3B;AACA;IACI,YAAY;IACZ,gBAAgB;IAChB,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;AAC3B;AACA;IACI,WAAW;IACX,iBAAiB;;AAErB;AACA;IACI,YAAY;IACZ,uBAAuB;AAC3B;;AAEA;;IAEI,eAAe;IACf,iBAAiB;IACjB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,cAAc;AAClB;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;AACf","sourcesContent":["@font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n\r\n@font-face {\r\n    font-family: 'Description';\r\n    src: url('../assets/Queensides-3z7Ey.ttf') format('truetype'),\r\n     url('../assets/QueensidesLight-ZVj3l.ttf'),\r\n     url('../assets/QueensidesMedium-x30zV.ttf');\r\n\r\n}\r\nbody{\r\n    background-image: url(../assets/bg.png);\r\n    padding:0;\r\n    margin: 0;\r\n}\r\n#content{\r\n    display:flex;\r\n    width:100%;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n#menuContainer{\r\n    display:grid;\r\n    grid-template-columns: 2fr 2fr;\r\n    width:70%;\r\n    margin-top: 50px;\r\n    background-color: #EAD8ED;\r\n    border-radius: 25px;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    justify-content: center;\r\n}\r\n#foodText{\r\n    display:flex;\r\n    text-align: left;\r\n    flex-direction: column;\r\n    margin-top:1.2rem;\r\n    font-family: 'Cartoon';\r\n    font-size: 3.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n}\r\n#cookieOne{\r\n    height:auto;\r\n    max-height: 300px;\r\n    \r\n}\r\n#cookieContainer{\r\n    display:flex;\r\n    justify-content: center;\r\n}\r\n\r\n#foodTextMoonlight\r\n{\r\n    text-align:left;\r\n    margin-top:1.2rem;\r\n    font-family: 'Cartoon';\r\n    font-size: 2.6rem;\r\n    color:#6F515F;\r\n    margin-left:5%;\r\n}\r\n#description{\r\n    font-size: 1.5rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n}"],"sourceRoot":""}]);
+    border-bottom: 0;
+}
+#cookieContainerLast{
+    display:flex;
+    justify-content: center;
+    position:relative;
+    margin-left:1px;
+}
+@media only screen and (max-width: 950px),screen and (max-height: 420px)  {
+    #content{
+        height:fit-content;
+    }
+    #foodPicStardust{
+        max-height: 80px;
+    }
+    #cookieContainerR{
+        height:100%;
+    }
+    #stampStardust{
+        max-height:50px;
+    }
+    #menuContainer{
+        width:100%;
+    }
+    #stamp{
+        max-height:60px;
+
+    }
+    #foodTextL,#foodTextLast,#foodText
+    {
+        font-size:1.6rem;
+    }
+    #description{
+        font-size:1rem;
+    }
+    #foodPic{
+    max-height:150px;
+    align-self: center;
+    }
+}
+@media only screen and (max-width: 700px),screen and (max-height: 400px)  {
+    #content{
+        height:fit-content;
+    }
+    #foodPicStardust{
+        max-height: 80px;
+    }
+    #cookieContainerR{
+        height:100%;
+    }
+    #stampStardust{
+        max-height:50px;
+    }
+    #menuContainer{
+        width:100%;
+    }
+    #stamp{
+        max-height:60px;
+
+    }
+    #foodTextL,#foodTextLast,#foodText
+    {
+        font-size:1.6rem;
+    }
+    #description{
+        font-size:1rem;
+    }
+    #foodPic{
+    max-height:150px;
+    align-self: center;
+    }
+}
+@media only screen and (max-width: 450px) {
+    #foodPicStardust{
+        max-height: 80px;
+    }
+    #cookieContainerR{
+        height:100%;
+    }
+    #stampStardust{
+        max-height:50px;
+    }
+    #menuContainer{
+        width:100%;
+    }
+    #stamp{
+        max-height:60px;
+
+    }
+    #foodTextL,#foodTextLast,#foodText
+    {
+        font-size:1.6rem;
+    }
+    #description{
+        font-size:1rem;
+    }
+    #foodPic{
+    max-height:150px;
+    align-self: center;
+    }
+}`, "",{"version":3,"sources":["webpack://./styles/styles.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;IACtB;4CAC2C;EAC7C;;AAEF;IACI,0BAA0B;IAC1B;;4CAE4C;;AAEhD;AACA;;IAEI,WAAW;IACX,SAAS;IACT,SAAS;AACb;AACA;IACI,iBAAiB;AACrB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,UAAU;IACV,mBAAmB;IACnB,uBAAuB;IACvB,0BAA0B;IAC1B,mBAAmB,EAAE,kBAAkB;AAC3C;AACA;IACI,YAAY;IACZ,8BAA8B;IAC9B,6BAA6B;IAC7B,SAAS;IACT,iBAAiB,EAAE,yBAAyB;IAC5C,yBAAyB;IACzB,mBAAmB;IACnB,4EAA4E;IAC5E,uBAAuB;IACvB,iBAAiB;IACjB,oBAAoB;IACpB,0BAA0B;IAC1B,yBAAyB;;AAE7B;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,iCAAiC;IACjC,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;IAClB,2CAA2C;;AAE/C;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,gBAAgB;IAChB,mBAAmB;IACnB,oBAAoB;AACxB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,eAAe;IACf,oBAAoB,CAAC;;AAEzB;;IAEI,eAAe;IACf,sBAAsB;IACtB,eAAe;IACf,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,iBAAiB;IACjB,iCAAiC;IACjC,sBAAsB;IACtB,gBAAgB,EAAE,yDAAyD;IAC3E,mBAAmB;AACvB;AACA;IACI,WAAW;AACf;AACA;IACI,eAAe;IACf,0BAA0B;IAC1B,WAAW;AACf;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,2CAA2C;;AAE/C;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;IACX,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,eAAe;AACnB;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n\r\n@font-face {\r\n    font-family: 'Description';\r\n    src: url('../assets/Queensides-3z7Ey.ttf') format('truetype'),\r\n     url('../assets/QueensidesLight-ZVj3l.ttf'),\r\n     url('../assets/QueensidesMedium-x30zV.ttf');\r\n\r\n}\r\nhtml,body{\r\n    \r\n    height:100%;\r\n    padding:0;\r\n    margin: 0;\r\n}\r\nbody{\r\n    overflow-x:hidden;\r\n}\r\n#content{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:100%;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: #EAD8ED ;\r\n    height: fit-content; /* Add this line */\r\n}\r\n#menuContainer{\r\n    display:grid;\r\n    grid-template-columns: 2fr 2fr;\r\n    grid-template-rows:250px auto;\r\n    width:60%;\r\n    margin: 20px auto; /* Center the container */ \r\n    background-color: #EAD8ED;\r\n    border-radius: 25px;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    justify-content: center;\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n    border: 10px solid #5c62a5;\r\n    background-color: #F5EBE0;\r\n    \r\n}   \r\n#foodText{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:30px;\r\n}\r\n#foodTextLast{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    margin-top:1.2rem;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodPic{\r\n    height:auto;\r\n    max-height: 250px;\r\n    margin-top: 1.2rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#cookieContainerL{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-right:1px;\r\n    padding-bottom:20px;\r\n    /*min-height:342px;*/\r\n}\r\n#cookieContainerR{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px;\r\n    /*min-height:342px;*/}\r\n\r\n#foodTextL,#foodTextLast\r\n{\r\n    text-align:left;\r\n    box-sizing: border-box; \r\n    margin-top:55px;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    padding-left:20px;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    box-sizing: border-box; \r\n    margin-right:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodTextLast{\r\n    border:none;\r\n}\r\n#description{\r\n    font-size: 2rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n}\r\n#foodTwo{\r\n    height:auto;\r\n    max-height: 300px;\r\n    margin-top: 1.2rem;\r\n}\r\n#stamp{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#foodPicStardust{\r\n    height:auto;\r\n    max-height: 200px;\r\n    margin-top: 5rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#stampStardust{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#descriptionLast{\r\n    font-size: 1.5rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n    border-bottom: 0;\r\n}\r\n#cookieContainerLast{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    margin-left:1px;\r\n}\r\n@media only screen and (max-width: 950px),screen and (max-height: 420px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 700px),screen and (max-height: 400px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) {\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17604,6 +18163,59 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./styles/footer.css":
+/*!***************************!*\
+  !*** ./styles/footer.css ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_footer_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!./footer.css */ "./node_modules/css-loader/dist/cjs.js!./styles/footer.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_footer_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_footer_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_footer_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_footer_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./styles/header.css":
 /*!***************************!*\
   !*** ./styles/header.css ***!
@@ -17653,6 +18265,59 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_header_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_header_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_header_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./styles/home.css":
+/*!*************************!*\
+  !*** ./styles/home.css ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_home_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!./home.css */ "./node_modules/css-loader/dist/cjs.js!./styles/home.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_home_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_home_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_home_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_home_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -17983,6 +18648,91 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./pages/home.js":
+/*!***********************!*\
+  !*** ./pages/home.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _assets_milkyAnimation_gif__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/milkyAnimation.gif */ "./assets/milkyAnimation.gif");
+/* harmony import */ var _assets_cafeimages_1_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/cafeimages/1.jpg */ "./assets/cafeimages/1.jpg");
+/* harmony import */ var _assets_cafeimages_2_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/cafeimages/2.jpg */ "./assets/cafeimages/2.jpg");
+/* harmony import */ var _assets_cafeimages_3_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/cafeimages/3.jpg */ "./assets/cafeimages/3.jpg");
+/* harmony import */ var _assets_cafeimages_4_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/cafeimages/4.jpg */ "./assets/cafeimages/4.jpg");
+/* harmony import */ var _assets_cafeimages_5_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/cafeimages/5.jpg */ "./assets/cafeimages/5.jpg");
+/* harmony import */ var _assets_cafeimages_6_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/cafeimages/6.jpg */ "./assets/cafeimages/6.jpg");
+/* harmony import */ var _assets_cafeimages_7_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/cafeimages/7.jpg */ "./assets/cafeimages/7.jpg");
+/* harmony import */ var _assets_cafeimages_8_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/cafeimages/8.jpg */ "./assets/cafeimages/8.jpg");
+
+
+
+
+
+
+
+
+
+
+const homeDiv =()=>
+{   
+    //Creation of grid layout for home page
+
+    const bannerContainer = document.createElement("div");
+    bannerContainer.id="banner";
+    const homeContainer = document.createElement("div");
+    homeContainer.id = "homeContainer";
+
+    const milkyAnimationContainer = document.createElement("div");
+    const milkyWayAnim = document.createElement("img");
+
+    milkyWayAnim.src = _assets_milkyAnimation_gif__WEBPACK_IMPORTED_MODULE_0__;
+    milkyWayAnim.id = "milkyWayAnim";
+    milkyAnimationContainer.appendChild(milkyWayAnim);
+
+    homeContainer.appendChild(milkyAnimationContainer);
+    bannerContainer.appendChild(homeContainer);
+    document.getElementById("content").appendChild(bannerContainer);
+
+    //End of animation grid cell
+
+    const sloganDiv = document.createElement("div");
+    sloganDiv.id="sloganContainer";
+    const slogan = document.createElement("div");
+    const slogan2= document.createElement("div");
+    slogan.textContent="All aboard the Sweets Express !";
+    slogan2.textContent="Sweet and desserts based on Cookie Run!";
+    sloganDiv.appendChild(slogan);
+    sloganDiv.appendChild(slogan2);
+    homeContainer.appendChild(sloganDiv);
+
+    const galleryDiv = document.createElement("div");
+    galleryDiv.id= "gallery";
+    //Start of Gallery
+    const images = [_assets_cafeimages_1_jpg__WEBPACK_IMPORTED_MODULE_1__, _assets_cafeimages_7_jpg__WEBPACK_IMPORTED_MODULE_7__, _assets_cafeimages_2_jpg__WEBPACK_IMPORTED_MODULE_2__, _assets_cafeimages_8_jpg__WEBPACK_IMPORTED_MODULE_8__,_assets_cafeimages_4_jpg__WEBPACK_IMPORTED_MODULE_4__, _assets_cafeimages_5_jpg__WEBPACK_IMPORTED_MODULE_5__, _assets_cafeimages_6_jpg__WEBPACK_IMPORTED_MODULE_6__];
+    images.forEach((src) => {
+        const image = document.createElement("img");
+        image.src = src;
+        image.className="image";
+        image.setAttribute("draggable","false");
+        
+        galleryDiv.appendChild(image);
+    });
+
+    
+    //Attach gallery to div
+    document.getElementById("content").appendChild(galleryDiv);
+
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homeDiv);
+
+/***/ }),
+
 /***/ "./pages/menu.js":
 /*!***********************!*\
   !*** ./pages/menu.js ***!
@@ -17995,62 +18745,183 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _assets_milkyWay_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/milkyWay.png */ "./assets/milkyWay.png");
-/* harmony import */ var _assets_moonlight_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/moonlight.png */ "./assets/moonlight.png");
+/* harmony import */ var _assets_milkyWayFood_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/milkyWayFood.png */ "./assets/milkyWayFood.png");
+/* harmony import */ var _assets_moonlight_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/moonlight.png */ "./assets/moonlight.png");
+/* harmony import */ var _assets_moonLightFood_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/moonLightFood.png */ "./assets/moonLightFood.png");
+/* harmony import */ var _assets_stardust_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/stardust.png */ "./assets/stardust.png");
+/* harmony import */ var _assets_stardustCookie_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/stardustCookie.png */ "./assets/stardustCookie.png");
+/* harmony import */ var _assets_purevanilla_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/purevanilla.png */ "./assets/purevanilla.png");
+/* harmony import */ var _assets_purevanillafood_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/purevanillafood.png */ "./assets/purevanillafood.png");
 
 
 
-const menuDiv = (()=>
+
+
+
+
+
+
+
+
+
+const menuDiv = ()=>
 {
     const menu = document.createElement("div");
     menu.id = "menuContainer";
 
+    // Cookie Menu Item Descriptions and Price
     const foodOne = document.createElement("div");
     const foodOneTitle = document.createElement("div");
     const foodOneDescription = document.createElement("div");
-    foodOneTitle.textContent="Milky Ways Cloud Milk";
-    foodOneDescription.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel facilisis elit. Etiam tincidunt lorem bibendum pretium eleifend. Morbi dignissim vitae est sit amet tincidunt. Pellentesque maximus nibh in nibh condimentum pellente enatis aliquet, nulla.';
+    foodOneTitle.textContent="Milky Way Cloud Milk 4.99";
+    foodOneDescription.textContent = 'Smooth butterfly pea milk tea topped with a fluffy almond cream cloud.';
     foodOneDescription.id = 'description';
     foodOne.id="foodText";
     foodOne.appendChild(foodOneTitle);
     foodOne.appendChild(foodOneDescription);
+
+   
     menu.appendChild(foodOne);
 
+    
+    //Cookie Menu Food and Stamp Sections
     const foodOneImgContainer = document.createElement("div");
-    foodOneImgContainer.id = 'cookieContainer';
-    const foodOneCookie = document.createElement("img");
-    foodOneCookie.src= _assets_milkyWay_png__WEBPACK_IMPORTED_MODULE_0__;
-    foodOneCookie.id = "cookieOne";
-    foodOneImgContainer.appendChild(foodOneCookie);
+    const foodOneCookieStampImg = document.createElement("img");
+    foodOneImgContainer.id = 'cookieContainerL';
+    const foodOnePic = document.createElement("img");
+    foodOnePic.src= _assets_milkyWayFood_png__WEBPACK_IMPORTED_MODULE_1__;
+    foodOneCookieStampImg.src = _assets_milkyWay_png__WEBPACK_IMPORTED_MODULE_0__;
+    foodOneCookieStampImg.id="stamp";
+    foodOneImgContainer.appendChild(foodOneCookieStampImg);
+    foodOnePic.id = "foodPic";
+
+    foodOneImgContainer.appendChild(foodOnePic);
 
     menu.appendChild(foodOneImgContainer);
-    
     menu.appendChild(foodOne);
 
-
+    /////////////////////////////////////////////////////////////////////////////////////////////
     const foodTwo = document.createElement("div");
     const foodTwoTitle = document.createElement("div");
     const foodTwoDescription = document.createElement("div");
-    foodTwoTitle.textContent="Moonlights Invitation from the Slumbering Moon";
-    foodTwoDescription.textContent ='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel facilisis elit. Etiam tincidunt lorem bibendum prent. Pellentesque maximus nibh in nibh condimentum pellentesque non eu urna.';
+    foodTwoTitle.textContent="Moonlight Invitation from the Slumbering Moon 5.99";
+    foodTwoDescription.textContent ='Refreshing and sweet mocktail made with lychee, sparkling lemonade, and blue spirulina.';
     foodTwoDescription.id = 'description';
-    foodTwo.id="foodTextMoonlight";
+    foodTwo.id="foodTextL";
     foodTwo.appendChild(foodTwoTitle);
     foodTwo.appendChild(foodTwoDescription);
     menu.appendChild(foodTwo);
 
     
     const foodTwoImgContainer = document.createElement("div");
-    
-    foodTwoImgContainer.id = 'cookieContainer';
-    const foodTwoCookie = document.createElement("img");
-    foodTwoCookie.src= _assets_moonlight_png__WEBPACK_IMPORTED_MODULE_1__;
-    foodTwoCookie.id = "cookieOne";
-    foodTwoImgContainer.appendChild(foodTwoCookie);
+    const foodTwoCookieStampImg = document.createElement("img");
+    foodTwoImgContainer.id = 'cookieContainerR';
+    const foodTwoPic = document.createElement("img");
+    foodTwoCookieStampImg.src = _assets_moonlight_png__WEBPACK_IMPORTED_MODULE_2__;
+    foodTwoCookieStampImg.id="stamp";
+    foodTwoPic.src= _assets_moonLightFood_png__WEBPACK_IMPORTED_MODULE_3__;
+    foodTwoPic.id = "foodPic";
+    foodTwoImgContainer.appendChild(foodTwoCookieStampImg);
+    foodTwoImgContainer.appendChild(foodTwoPic);
 
     menu.appendChild(foodTwo);
     menu.appendChild(foodTwoImgContainer);
+
+
+    // Cookie Menu Item Descriptions and Price
+    const foodThree = document.createElement("div");
+    const foodThreeTitle = document.createElement("div");
+    const foodThreeDescription = document.createElement("div");
+    foodThreeTitle.textContent="Stardust Moon Jelly 4.99";
+    foodThreeDescription.textContent = 'A fresh take on your favorite jelly dessert - flavored with strawberry, sparkling soda, and blue spirulina, topped with edible glitter and coconut flakes.';
+    foodThreeDescription.id = 'description';
+    foodThree.id="foodText";
+    foodThree.appendChild(foodThreeTitle);
+    foodThree.appendChild(foodThreeDescription);
+
+   
+    menu.appendChild(foodThree);
+
+    
+    //Cookie Menu Food and Stamp Sections
+    const foodThreeImgContainer = document.createElement("div");
+    const foodThreeCookieStampImg = document.createElement("img");
+    foodThreeImgContainer.id = 'cookieContainerL';
+    const foodThreePic = document.createElement("img");
+    foodThreePic.src= _assets_stardust_png__WEBPACK_IMPORTED_MODULE_4__;
+    foodThreeCookieStampImg.src = _assets_stardustCookie_png__WEBPACK_IMPORTED_MODULE_5__;
+    foodThreeCookieStampImg.id="stampStardust";
+    foodThreeImgContainer.appendChild(foodThreeCookieStampImg);
+    foodThreePic.id = "foodPicStardust";
+
+    foodThreeImgContainer.appendChild(foodThreePic);
+
+    menu.appendChild(foodThreeImgContainer);
+    menu.appendChild(foodThree);
+
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    /* // Cookie Menu Item Descriptions and Price
+       const foodFour = document.createElement("div");
+       const foodFourTitle = document.createElement("div");
+       const foodFourDescription = document.createElement("div");
+       foodFourTitle.textContent="Stardust Moon Jelly 4.99";
+       foodFourDescription.textContent = 'A fresh take on your favorite jelly dessert - flavored with strawberry, sparkling soda, and blue spirulina, topped with edible glitter and coconut flakes.';
+       foodFourDescription.id = 'description';
+       foodFour.id="foodText";
+       foodFour.appendChild(foodFourTitle);
+       foodFour.appendChild(foodFourDescription);
+   
+      
+       menu.appendChild(foodFour);
+   
+       
+       //Cookie Menu Food and Stamp Sections
+       const foodFourImgContainer = document.createElement("div");
+       const foodFourCookieStampImg = document.createElement("img");
+       foodFourImgContainer.id = 'cookieContainerL';
+       const foodFourPic = document.createElement("img");
+       foodThreePic.src= stardust;
+       foodFourCookieStampImg.src = stardustCookie;
+       foodFourCookieStampImg.id="stampStardust";
+       foodFourImgContainer.appendChild(foodFourCookieStampImg);
+       foodFourPic.id = "foodPicStardust";
+   
+       foodThreeImgContainer.appendChild(foodThreePic);
+   
+       menu.appendChild(foodFourImgContainer);
+       menu.appendChild(foodFour);
+*/
+    // Cookie Menu Item Descriptions and Price
+    const foodLast = document.createElement("div");
+    const foodLastTitle = document.createElement("div");
+    const foodLastDescription = document.createElement("div");
+    foodLastTitle.textContent="Pure Vanilla Soft Serve 4.99";
+    foodLastDescription.textContent = 'Delicate and velvety soft serve made with vanilla bean and rich Hokkaido Milk.';
+    foodLastDescription.id = 'description';
+    foodLast.id="foodTextLast";
+    foodLast.appendChild(foodLastTitle);
+    foodLast.appendChild(foodLastDescription);
+
+    
+    //Cookie Menu Food and Stamp Sections
+    const foodLastImgContainer = document.createElement("div");
+    const foodLastCookieStampImg = document.createElement("img");
+    foodLastImgContainer.id = 'cookieContainerLast';
+    const foodLastPic = document.createElement("img");
+    foodLastPic.src= _assets_purevanillafood_png__WEBPACK_IMPORTED_MODULE_7__;
+    foodLastCookieStampImg.src = _assets_purevanilla_png__WEBPACK_IMPORTED_MODULE_6__;
+    foodLastCookieStampImg.id="stamp";
+    foodLastImgContainer.appendChild(foodLastCookieStampImg);
+    foodLastPic.id = "foodPic";
+
+    foodLastImgContainer.appendChild(foodLastPic);
+    menu.appendChild(foodLast);    
+    menu.appendChild(foodLastImgContainer);
+
+
+
     return menu;
-});
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuDiv);
 
@@ -18068,13 +18939,121 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/styles.css */ "./styles/styles.css");
 /* harmony import */ var _styles_header_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/header.css */ "./styles/header.css");
-/* harmony import */ var _functions_firstLoad__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/firstLoad */ "./functions/firstLoad.js");
+/* harmony import */ var _styles_home_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/home.css */ "./styles/home.css");
+/* harmony import */ var _styles_footer_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/footer.css */ "./styles/footer.css");
+/* harmony import */ var _functions_firstLoad__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../functions/firstLoad */ "./functions/firstLoad.js");
+/* harmony import */ var _functions_cleanSlate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../functions/cleanSlate */ "./functions/cleanSlate.js");
+/* harmony import */ var _pages_home__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/home */ "./pages/home.js");
+/* harmony import */ var _pages_menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pages/menu */ "./pages/menu.js");
+/* harmony import */ var _functions_header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../functions/header */ "./functions/header.js");
+/* harmony import */ var _functions_footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../functions/footer */ "./functions/footer.js");
 
 
 
 
 
-(0,_functions_firstLoad__WEBPACK_IMPORTED_MODULE_3__["default"])();
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const header = (0,_functions_header__WEBPACK_IMPORTED_MODULE_9__["default"])();
+    document.body.prepend(header);
+    const homeButton = document.getElementById("homeButton");
+    const menuButton = document.getElementById("menuButton");
+    const aboutButton = document.getElementById("aboutButton");
+
+    // Load Home Page Initially
+    loadHomePage();
+    (0,_functions_footer__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    if (homeButton) {
+        homeButton.addEventListener("click", (e) => {
+            (0,_functions_cleanSlate__WEBPACK_IMPORTED_MODULE_6__["default"])();
+            document.body.prepend(header);
+            loadHomePage();
+            console.log("click");
+        });
+    } else {
+        console.error("homeButton not found");
+    }
+
+    if (menuButton) {
+        menuButton.addEventListener("click", (e) => {
+            (0,_functions_cleanSlate__WEBPACK_IMPORTED_MODULE_6__["default"])();
+            const menu = (0,_pages_menu__WEBPACK_IMPORTED_MODULE_8__["default"])();
+            document.getElementById("content").appendChild(menu);
+            console.log("click");
+        });
+    } else {
+        console.error("menuButton not found");
+    }
+});
+
+function loadHomePage() {
+    (0,_pages_home__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    initGalleryEvents();
+}
+
+function initGalleryEvents() {
+    const track = document.getElementById("gallery");
+    if (track) {
+        track.dataset.mouseDownAt = "0";
+        track.dataset.prevPercentage = "0";
+
+        const handleOnDown = e => {
+            e.preventDefault();
+            track.dataset.mouseDownAt = e.clientX || e.touches[0].clientX;
+        };
+
+        const handleOnUp = () => {
+            track.dataset.mouseDownAt = "0";
+            track.dataset.prevPercentage = track.dataset.percentage;
+        };
+
+        const handleOnMove = e => {
+            if (track.dataset.mouseDownAt === "0") return;
+            e.preventDefault();  // Prevent default behavior to avoid vertical scrolling
+
+            const clientX = e.clientX || e.touches[0].clientX;
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - clientX;
+            const maxDelta = window.innerWidth / 2;
+
+            const percentage = (mouseDelta / maxDelta) * -100;
+            const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
+            const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -47);
+
+            track.dataset.percentage = nextPercentage;
+
+            track.style.transform = `translate(${nextPercentage}%, 0%)`;
+
+            track.animate({
+                transform: `translate(${nextPercentage}%, 0%)`
+            }, { duration: 1200, fill: "forwards" });
+
+            const images = track.getElementsByTagName("img");
+            for (const image of images) {
+                image.animate({
+                    objectPosition: `${100 + nextPercentage}% center`
+                }, { duration: 1200, fill: "forwards" });
+            }
+        };
+
+        track.addEventListener("mousedown", handleOnDown);
+        track.addEventListener("touchstart", handleOnDown);
+        track.addEventListener("mouseup", handleOnUp);
+        track.addEventListener("touchend", handleOnUp);
+        track.addEventListener("mousemove", handleOnMove);
+        track.addEventListener("touchmove", handleOnMove);
+
+    } else {
+        console.error("Gallery element not found in the DOM.");
+    }
+}
+
 
 /***/ }),
 
@@ -18086,6 +19065,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 module.exports = __webpack_require__.p + "27477ae9d216323c01aa.png";
+
+/***/ }),
+
+/***/ "./assets/KidslandAvenue-mLM09.ttf":
+/*!*****************************************!*\
+  !*** ./assets/KidslandAvenue-mLM09.ttf ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "6b696bd95c6647ee1b6b.ttf";
 
 /***/ }),
 
@@ -18155,14 +19145,102 @@ module.exports = __webpack_require__.p + "529ad855cac80462aa7e.otf";
 
 /***/ }),
 
-/***/ "./assets/bg.png":
-/*!***********************!*\
-  !*** ./assets/bg.png ***!
-  \***********************/
+/***/ "./assets/cafeimages/1.jpg":
+/*!*********************************!*\
+  !*** ./assets/cafeimages/1.jpg ***!
+  \*********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "aad2489eef07b8e8b318.png";
+module.exports = __webpack_require__.p + "8df107472f6fa854577a.jpg";
+
+/***/ }),
+
+/***/ "./assets/cafeimages/2.jpg":
+/*!*********************************!*\
+  !*** ./assets/cafeimages/2.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "ebc56d64dd3514733f70.jpg";
+
+/***/ }),
+
+/***/ "./assets/cafeimages/3.jpg":
+/*!*********************************!*\
+  !*** ./assets/cafeimages/3.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "efd3f4c09a0a5ed116bf.jpg";
+
+/***/ }),
+
+/***/ "./assets/cafeimages/4.jpg":
+/*!*********************************!*\
+  !*** ./assets/cafeimages/4.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "5f3a27fb48dc6f5cbc55.jpg";
+
+/***/ }),
+
+/***/ "./assets/cafeimages/5.jpg":
+/*!*********************************!*\
+  !*** ./assets/cafeimages/5.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "edd73a89450114b1b368.jpg";
+
+/***/ }),
+
+/***/ "./assets/cafeimages/6.jpg":
+/*!*********************************!*\
+  !*** ./assets/cafeimages/6.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "74ddfa51a0220c15e223.jpg";
+
+/***/ }),
+
+/***/ "./assets/cafeimages/7.jpg":
+/*!*********************************!*\
+  !*** ./assets/cafeimages/7.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "9699165b4ad35f757af4.jpg";
+
+/***/ }),
+
+/***/ "./assets/cafeimages/8.jpg":
+/*!*********************************!*\
+  !*** ./assets/cafeimages/8.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "e33bc2c3a64039ec9807.jpg";
+
+/***/ }),
+
+/***/ "./assets/milkyAnimation.gif":
+/*!***********************************!*\
+  !*** ./assets/milkyAnimation.gif ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "06093a7eda4c14c1f8b2.gif";
 
 /***/ }),
 
@@ -18177,6 +19255,39 @@ module.exports = __webpack_require__.p + "2776314d9fcb1cd86340.png";
 
 /***/ }),
 
+/***/ "./assets/milkyWayFood.png":
+/*!*********************************!*\
+  !*** ./assets/milkyWayFood.png ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "7ca0dc5a8bcbea140b89.png";
+
+/***/ }),
+
+/***/ "./assets/milkywayrun.gif":
+/*!********************************!*\
+  !*** ./assets/milkywayrun.gif ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "2965293a7c7481a02470.gif";
+
+/***/ }),
+
+/***/ "./assets/moonLightFood.png":
+/*!**********************************!*\
+  !*** ./assets/moonLightFood.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "256c1268a8171f511021.png";
+
+/***/ }),
+
 /***/ "./assets/moonlight.png":
 /*!******************************!*\
   !*** ./assets/moonlight.png ***!
@@ -18185,6 +19296,50 @@ module.exports = __webpack_require__.p + "2776314d9fcb1cd86340.png";
 
 "use strict";
 module.exports = __webpack_require__.p + "d043dd879cf9bde198c2.png";
+
+/***/ }),
+
+/***/ "./assets/purevanilla.png":
+/*!********************************!*\
+  !*** ./assets/purevanilla.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "68d38e2208115fbcb195.png";
+
+/***/ }),
+
+/***/ "./assets/purevanillafood.png":
+/*!************************************!*\
+  !*** ./assets/purevanillafood.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "05748297fc6812da259b.png";
+
+/***/ }),
+
+/***/ "./assets/stardust.png":
+/*!*****************************!*\
+  !*** ./assets/stardust.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "f5517a091ad70d616f10.png";
+
+/***/ }),
+
+/***/ "./assets/stardustCookie.png":
+/*!***********************************!*\
+  !*** ./assets/stardustCookie.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "c02d7ad7492fc50d5bfb.png";
 
 /***/ })
 

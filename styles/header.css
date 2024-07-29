@@ -45,6 +45,8 @@ button:hover{
 #buttonContainer{
     display:flex;
     gap:50px;
+    width:100%;
+    justify-content: center;
 }
 @media only screen and (max-width: 1200px) {
     #header-logo{

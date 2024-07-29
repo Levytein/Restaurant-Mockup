@@ -29,7 +29,6 @@ body{
     justify-content: center;
     background-color: #EAD8ED ;
     height: fit-content; /* Add this line */;
-    overflow-x: auto;
 }
 #menuContainer{
     display:grid;

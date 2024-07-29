@@ -64,6 +64,16 @@
     
     
 }
+@media only screen and (max-width: 3000px){
+    #content{
+        overflow-x: auto;
+    }
+}
+@media only screen and (max-width: 2000px){
+    #content{
+        overflow-x: hidden;
+    }
+}
 @media only screen and (max-width: 1800px){
     #content{
         overflow-x: auto;

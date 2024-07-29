@@ -92,3 +92,10 @@ button:hover{
         margin-top:0;
     }
 }
+@media only screen and (max-width: 450px),screen and (max-height: 950px)  {
+    #buttonContainer{
+        font-size:3rem;
+        margin-top:0;
+        gap:10px;
+    }
+}

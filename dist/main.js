@@ -95,7 +95,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _assets_Cookie_run_logo_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/Cookie_run_logo.png */ "./assets/Cookie_run_logo.png");
+/* harmony import */ var _assets_Logo_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/Logo.png */ "./assets/Logo.png");
 
 
 const headerDiv = (() => {
@@ -109,8 +109,9 @@ const headerDiv = (() => {
 
   const logoContainer = document.createElement("div");
   const headerLogo = document.createElement("img");
-  headerLogo.src = _assets_Cookie_run_logo_png__WEBPACK_IMPORTED_MODULE_0__;
+  headerLogo.src = _assets_Logo_png__WEBPACK_IMPORTED_MODULE_0__;
   headerLogo.id = "header-logo";
+  logoContainer.id ="logoWrapper";
   logoContainer.appendChild(headerLogo);
   navigationContainer.appendChild(logoContainer);
 
@@ -169,7 +170,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `#footer{
 }
 #milkyRun{
     position: relative;
-    max-height:100px;
+    max-height:50px;
     height:auto;
     animation: linear infinite;
     animation-name: run;
@@ -200,7 +201,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `#footer{
     #milkyRun{
         max-height:50px;
     }
-}`, "",{"version":3,"sources":["webpack://./styles/footer.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,UAAU;IACV,gBAAgB;AACpB;AACA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,WAAW;IACX,0BAA0B;IAC1B,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI;QACI,OAAO;MACT;MACA;QACE,wBAAwB;MAC1B;MACA;QACE,wBAAwB;QACxB,0BAA0B;OAC3B;OACA;QACC,0BAA0B;MAC5B;MACA;QACE,OAAO;QACP,wBAAwB;MAC1B;EACJ;;EAEA;IACE;QACI,eAAe;IACnB;AACJ","sourcesContent":["#footer{\r\n    background-color:#1B1926;\r\n    width:100%;\r\n    position: sticky;\r\n}\r\n#milkyRun{\r\n    position: relative;\r\n    max-height:100px;\r\n    height:auto;\r\n    animation: linear infinite;\r\n    animation-name: run;\r\n    animation-duration: 12s;\r\n}\r\n\r\n@keyframes run {\r\n    0% {\r\n        left: 0;\r\n      }\r\n      48% {\r\n        transform: rotateY(0deg); \r\n      }\r\n      50% { \r\n        left: calc(100% - 130px); \r\n        transform: rotateY(180deg); \r\n       }\r\n       98% {\r\n        transform: rotateY(180deg); \r\n      }\r\n      100% {\r\n        left: 0;\r\n        transform: rotateY(0deg);     \r\n      }\r\n  }\r\n\r\n  @media only screen and (max-width: 700px) {\r\n    #milkyRun{\r\n        max-height:50px;\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/footer.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,UAAU;IACV,gBAAgB;AACpB;AACA;IACI,kBAAkB;IAClB,eAAe;IACf,WAAW;IACX,0BAA0B;IAC1B,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI;QACI,OAAO;MACT;MACA;QACE,wBAAwB;MAC1B;MACA;QACE,wBAAwB;QACxB,0BAA0B;OAC3B;OACA;QACC,0BAA0B;MAC5B;MACA;QACE,OAAO;QACP,wBAAwB;MAC1B;EACJ;;EAEA;IACE;QACI,eAAe;IACnB;AACJ","sourcesContent":["#footer{\r\n    background-color:#1B1926;\r\n    width:100%;\r\n    position: sticky;\r\n}\r\n#milkyRun{\r\n    position: relative;\r\n    max-height:50px;\r\n    height:auto;\r\n    animation: linear infinite;\r\n    animation-name: run;\r\n    animation-duration: 12s;\r\n}\r\n\r\n@keyframes run {\r\n    0% {\r\n        left: 0;\r\n      }\r\n      48% {\r\n        transform: rotateY(0deg); \r\n      }\r\n      50% { \r\n        left: calc(100% - 130px); \r\n        transform: rotateY(180deg); \r\n       }\r\n       98% {\r\n        transform: rotateY(180deg); \r\n      }\r\n      100% {\r\n        left: 0;\r\n        transform: rotateY(0deg);     \r\n      }\r\n  }\r\n\r\n  @media only screen and (max-width: 700px) {\r\n    #milkyRun{\r\n        max-height:50px;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -242,13 +243,16 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
     padding:0;
     margin:0;
     width:100%;
+    height:100px;
+}
+#logoWrapper
+{
+    display:flex;
+    width:100%;
 }
 #header-logo{
-    max-width:400px;
+    height:100px;
     background: none;
-    position: absolute;
-    left:18%;
-    top:0;
 }
 #navBar{
     display:flex;
@@ -260,7 +264,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
     width:100%;
     margin-left:auto;
     margin-right:auto;
-    min-height:130px;
     align-items: center;
 }
 button{
@@ -271,7 +274,6 @@ button{
     color:white;
     display:inline-block;
     max-height: 100px;
-    margin-top:20px;
 }
 button:hover{
     text-decoration:underline;
@@ -280,18 +282,10 @@ button:hover{
     display:flex;
     gap:50px;
     width:100%;
-    justify-content: center;
+    justify-content:end;
+    margin-right:1.6rem;
 }
 @media only screen and (max-width: 1650px) {
-    #header-logo{
-        max-width:200px;
-        position: relative;
-        left:0;
-    }
-    #navBar{
-        flex-direction: column;
-        gap:0px;
-    }
     button{
         font-size:3rem;
         margin-top:0;
@@ -299,11 +293,6 @@ button:hover{
 
 }
 @media only screen and (max-width: 700px) {
-    #header-logo{
-        max-width:200px;
-        position: relative;
-        left:0;
-    }
     #navBar{
         flex-direction: column;
         gap:0px;
@@ -314,14 +303,20 @@ button:hover{
     }
 }
 @media only screen and (max-width: 920px),screen and (max-height: 400px)  {
+    #logoWrapper{
+        justify-content: center;
+    }
     #header-logo{
         max-width:200px;
         position: relative;
-        left:0;
     }
     #navBar{
         flex-direction: column;
         gap:0px;
+    }
+    #buttonContainer{
+        justify-content: center;
+        margin-right:0;
     }
     button{
         font-size:3rem;
@@ -337,7 +332,7 @@ button:hover{
     button{
         font-size:2rem;
     }
-}`, "",{"version":3,"sources":["webpack://./styles/header.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;AACF;IACI,YAAY;IACZ,qBAAqB;IACrB,SAAS;IACT,QAAQ;IACR,UAAU;AACd;AACA;IACI,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,QAAQ;IACR,KAAK;AACT;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,sBAAsB;IACtB,SAAS;IACT,yBAAyB;IACzB,iBAAiB;IACjB,UAAU;IACV,gBAAgB;IAChB,iBAAiB;IACjB,gBAAgB;IAChB,mBAAmB;AACvB;AACA;IACI,eAAe;IACf,WAAW;IACX,oBAAoB;IACpB,cAAc;IACd,WAAW;IACX,oBAAoB;IACpB,iBAAiB;IACjB,eAAe;AACnB;AACA;IACI,yBAAyB;AAC7B;AACA;IACI,YAAY;IACZ,QAAQ;IACR,UAAU;IACV,uBAAuB;AAC3B;AACA;IACI;QACI,eAAe;QACf,kBAAkB;QAClB,MAAM;IACV;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;;AAEJ;AACA;IACI;QACI,eAAe;QACf,kBAAkB;QAClB,MAAM;IACV;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,eAAe;QACf,kBAAkB;QAClB,MAAM;IACV;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,eAAe;QACf,YAAY;QACZ,QAAQ;IACZ;IACA;QACI,cAAc;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n#header{\r\n    display:flex;\r\n    box-sizing:border-box;\r\n    padding:0;\r\n    margin:0;\r\n    width:100%;\r\n}\r\n#header-logo{\r\n    max-width:400px;\r\n    background: none;\r\n    position: absolute;\r\n    left:18%;\r\n    top:0;\r\n}\r\n#navBar{\r\n    display:flex;\r\n    justify-content: center;\r\n    box-sizing: border-box;\r\n    gap:100px;\r\n    background-color: #BEACDB;\r\n    position:relative;\r\n    width:100%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    min-height:130px;\r\n    align-items: center;\r\n}\r\nbutton{\r\n    background:none;\r\n    border:none;\r\n    font-family: 'Shiny';\r\n    font-size:4rem;\r\n    color:white;\r\n    display:inline-block;\r\n    max-height: 100px;\r\n    margin-top:20px;\r\n}\r\nbutton:hover{\r\n    text-decoration:underline;\r\n}\r\n#buttonContainer{\r\n    display:flex;\r\n    gap:50px;\r\n    width:100%;\r\n    justify-content: center;\r\n}\r\n@media only screen and (max-width: 1650px) {\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n        left:0;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n\r\n}\r\n@media only screen and (max-width: 700px) {\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n        left:0;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 920px),screen and (max-height: 400px)  {\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n        left:0;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) and (max-height: 950px)  {\r\n    #buttonContainer{\r\n        max-width:400px;\r\n        margin-top:0;\r\n        gap:10px;\r\n    }\r\n    button{\r\n        font-size:2rem;\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/header.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;AACF;IACI,YAAY;IACZ,qBAAqB;IACrB,SAAS;IACT,QAAQ;IACR,UAAU;IACV,YAAY;AAChB;AACA;;IAEI,YAAY;IACZ,UAAU;AACd;AACA;IACI,YAAY;IACZ,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,sBAAsB;IACtB,SAAS;IACT,yBAAyB;IACzB,iBAAiB;IACjB,UAAU;IACV,gBAAgB;IAChB,iBAAiB;IACjB,mBAAmB;AACvB;AACA;IACI,eAAe;IACf,WAAW;IACX,oBAAoB;IACpB,cAAc;IACd,WAAW;IACX,oBAAoB;IACpB,iBAAiB;AACrB;AACA;IACI,yBAAyB;AAC7B;AACA;IACI,YAAY;IACZ,QAAQ;IACR,UAAU;IACV,mBAAmB;IACnB,mBAAmB;AACvB;AACA;IACI;QACI,cAAc;QACd,YAAY;IAChB;;AAEJ;AACA;IACI;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,uBAAuB;IAC3B;IACA;QACI,eAAe;QACf,kBAAkB;IACtB;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,uBAAuB;QACvB,cAAc;IAClB;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,eAAe;QACf,YAAY;QACZ,QAAQ;IACZ;IACA;QACI,cAAc;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n#header{\r\n    display:flex;\r\n    box-sizing:border-box;\r\n    padding:0;\r\n    margin:0;\r\n    width:100%;\r\n    height:100px;\r\n}\r\n#logoWrapper\r\n{\r\n    display:flex;\r\n    width:100%;\r\n}\r\n#header-logo{\r\n    height:100px;\r\n    background: none;\r\n}\r\n#navBar{\r\n    display:flex;\r\n    justify-content: center;\r\n    box-sizing: border-box;\r\n    gap:100px;\r\n    background-color: #BEACDB;\r\n    position:relative;\r\n    width:100%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    align-items: center;\r\n}\r\nbutton{\r\n    background:none;\r\n    border:none;\r\n    font-family: 'Shiny';\r\n    font-size:4rem;\r\n    color:white;\r\n    display:inline-block;\r\n    max-height: 100px;\r\n}\r\nbutton:hover{\r\n    text-decoration:underline;\r\n}\r\n#buttonContainer{\r\n    display:flex;\r\n    gap:50px;\r\n    width:100%;\r\n    justify-content:end;\r\n    margin-right:1.6rem;\r\n}\r\n@media only screen and (max-width: 1650px) {\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n\r\n}\r\n@media only screen and (max-width: 700px) {\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 920px),screen and (max-height: 400px)  {\r\n    #logoWrapper{\r\n        justify-content: center;\r\n    }\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    #buttonContainer{\r\n        justify-content: center;\r\n        margin-right:0;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) and (max-height: 950px)  {\r\n    #buttonContainer{\r\n        max-width:400px;\r\n        margin-top:0;\r\n        gap:10px;\r\n    }\r\n    button{\r\n        font-size:2rem;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -366,164 +361,121 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/KidslandAvenue-mLM09.ttf */ "./assets/KidslandAvenue-mLM09.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/Shiny.ttf */ "./assets/Shiny.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/StayworkRegular-axrEo.otf */ "./assets/StayworkRegular-axrEo.otf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/StayworkRegular-Wy4P4.otf */ "./assets/StayworkRegular-Wy4P4.otf"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
+var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
     font-family: 'Slogan';
     src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format('truetype');
 }
-
-* {
-    &,
-    &::before,
-    &::after {
-      box-sizing: border-box;
-    }
+@font-face {
+    font-family: 'Shiny';
+    src: url(${___CSS_LOADER_URL_REPLACEMENT_1___}) format('truetype');
   }
-#homeContainer{
-    display:grid;
-    box-sizing: border-box;
-    grid-template-columns: 450px 1fr;
-    /*background-color: rgba(0,0,0,.4);*/
-    border-radius: 30px;
-    align-items: center;
-    padding:20px;
-    height: 100%; /* Add this line */
-    max-height:300px;
-}
-#milkyWayAnim
-{
-    height:auto;
-    max-height:290px;
-}
-#banner
-{
+
+  @font-face {
+    font-family: 'Cartoon';
+    src: url(${___CSS_LOADER_URL_REPLACEMENT_2___}) format('truetype'),
+     url(${___CSS_LOADER_URL_REPLACEMENT_3___});
+  }
+#homeWrapper{
     display:flex;
     width:100%;
     height:100%;
-    max-height:300px;
-    justify-content: center;
+    overflow: hidden;
 }
-#gallery{
-    display: flex;
-    gap:4vmin;
-    user-select:none;
-    position:relative;
-    left:29%;
-    right:29%;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 20px;  /* Add padding to ensure no content is touching the edges */
-    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
-}
-#gallery>img{
-    width:39vmin;
-    height:56vmin;
-    object-fit:cover;
-    object-position: 100% center;}
-#sloganContainer
+#milkyAnimationContainer
 {
     display:flex;
+    height:100%;
+    width:50%;
+    z-index:1;
+    box-sizing: border-box;
+}
+#rightWrapper{
+    display:flex;
     flex-direction: column;
-    font-family: 'Slogan';
-    align-items: center;
-    font-size:3rem;
+    width:60%;
+    height:100%;
+    font-size:2.4rem;
+}
+#textContainer{
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    box-sizing: border-box;
+    height:40%;
+    /*background-color: rgba(0,0,0,.1);*/
+    padding:20px;
+    border-radius:16px;
+    margin-right:200px;
+    position: relative;
+    z-index:2;
+}
+h2{
+    font-family: "Shiny";
+    font-size:6rem;
+    margin:0;
+    margin-top:1rem;
     color:black;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+}
+p{
+    font-family: "Cartoon";
+    font-size:3rem;
+    margin:0;
+    text-align: left;
+}
+#milkyWayAnim{
+ height:100%;
+}
+#gallery{
+    margin-inline: auto;
+    position:relative;
+    height:800px;
+    width:1200px;
+    overflow:hidden;
+    position:relative;
+    right:200px;
+    mask-image:linear-gradient(to right
+    ,
+    rgba(0,0,0,0),
+    rgba(0,0,0,1)20%,
+    rgba(0,0,0,1) 85%,
+    rgba(0,0,0,0)
+    )
     
-    
 }
-@media only screen and (max-width: 3000px){
-    #content{
-        overflow-x: auto;
-    }
-}
-@media only screen and (max-width: 2000px){
-    #content{
-        overflow-x: hidden;
-    }
-}
-@media only screen and (max-width: 1800px){
-    #content{
-        overflow-x: auto;
-    }
-}
-@media only screen and (max-width: 700px){
-
-    #sloganContainer{
-        font-size:1.4rem;
-        -webkit-text-stroke-width: .2px;
-    }
-    #milkyWayAnim{
-        max-height: 150px;
-    }
-    #homeContainer{
-        display:flex;
-        margin-top:0;
-    }
-    #gallery{
-        left:0;
-        right:0;
-    }
-@media only screen and (max-width: 920px),screen and (max-height: 420px)  {
-    #sloganContainer{
-        font-size:1.4rem;
-        -webkit-text-stroke-width: .2px;
-    }
-    #milkyWayAnim{
-        max-height: 150px;
-    }
-    #homeContainer{
-        display:flex;
-        margin-top:0;
-    }
-    #gallery{
-        left:0;
-        right:0;
-        padding-left:2300px;
-
-    }
-    #gallery>img{
-        width:70vmin;
-        height:100vmin;
-        object-fit:cover;
-        object-position: 100% center;
-    }
-
-}
-@media only screen and (max-width: 431px), screen and (max-height: 950px)
+@keyframes scrollLeft
 {
-    #gallery{
-        margin-top:20px;
-        padding-left:1900px;
-        padding-bottom:50px;
+    to{
+        right:-2500px;
     }
 }
-@media only screen and (max-width: 420px), screen and (max-height: 930px)
-{
-    #homeContainer{
-        display:flex;
-    }
-    #gallery{
-        margin-top:20px;
-        padding-left:1800px;
-    }
-    }
-    #gallery>img{
-        width:70vmin;
-        height:100vmin;
-        object-fit:cover;
-        object-position: 100% center;
-
-    }
-    #content{
-        padding-bottom: 40px;
-
-    }
+.image{
+    height:600px;
+    width:500px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: center;
+    position:absolute;
+    right:100%;
+    z-index: 0;
+    animation-name:scrollLeft;
+    animation-duration:30s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+    animation-delay: calc(30s / 7 * (7 - var(--n)) * -1);
 }
-`, "",{"version":3,"sources":["webpack://./styles/home.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,+DAAiE;AACrE;;AAEA;IACI;;;MAGE,sBAAsB;IACxB;EACF;AACF;IACI,YAAY;IACZ,sBAAsB;IACtB,gCAAgC;IAChC,oCAAoC;IACpC,mBAAmB;IACnB,mBAAmB;IACnB,YAAY;IACZ,YAAY,EAAE,kBAAkB;IAChC,gBAAgB;AACpB;AACA;;IAEI,WAAW;IACX,gBAAgB;AACpB;AACA;;IAEI,YAAY;IACZ,UAAU;IACV,WAAW;IACX,gBAAgB;IAChB,uBAAuB;AAC3B;AACA;IACI,aAAa;IACb,SAAS;IACT,gBAAgB;IAChB,iBAAiB;IACjB,QAAQ;IACR,SAAS;IACT,uBAAuB;IACvB,WAAW;IACX,aAAa,GAAG,2DAA2D;IAC3E,sBAAsB,GAAG,uEAAuE;AACpG;AACA;IACI,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,4BAA4B,CAAC;AACjC;;IAEI,YAAY;IACZ,sBAAsB;IACtB,qBAAqB;IACrB,mBAAmB;IACnB,cAAc;IACd,WAAW;IACX,8BAA8B;IAC9B,gCAAgC;;;AAGpC;AACA;IACI;QACI,gBAAgB;IACpB;AACJ;AACA;IACI;QACI,kBAAkB;IACtB;AACJ;AACA;IACI;QACI,gBAAgB;IACpB;AACJ;AACA;;IAEI;QACI,gBAAgB;QAChB,+BAA+B;IACnC;IACA;QACI,iBAAiB;IACrB;IACA;QACI,YAAY;QACZ,YAAY;IAChB;IACA;QACI,MAAM;QACN,OAAO;IACX;AACJ;IACI;QACI,gBAAgB;QAChB,+BAA+B;IACnC;IACA;QACI,iBAAiB;IACrB;IACA;QACI,YAAY;QACZ,YAAY;IAChB;IACA;QACI,MAAM;QACN,OAAO;QACP,mBAAmB;;IAEvB;IACA;QACI,YAAY;QACZ,cAAc;QACd,gBAAgB;QAChB,4BAA4B;IAChC;;AAEJ;AACA;;IAEI;QACI,eAAe;QACf,mBAAmB;QACnB,mBAAmB;IACvB;AACJ;AACA;;IAEI;QACI,YAAY;IAChB;IACA;QACI,eAAe;QACf,mBAAmB;IACvB;IACA;IACA;QACI,YAAY;QACZ,cAAc;QACd,gBAAgB;QAChB,4BAA4B;;IAEhC;IACA;QACI,oBAAoB;;IAExB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Slogan';\r\n    src: url('../assets/KidslandAvenue-mLM09.ttf') format('truetype');\r\n}\r\n\r\n* {\r\n    &,\r\n    &::before,\r\n    &::after {\r\n      box-sizing: border-box;\r\n    }\r\n  }\r\n#homeContainer{\r\n    display:grid;\r\n    box-sizing: border-box;\r\n    grid-template-columns: 450px 1fr;\r\n    /*background-color: rgba(0,0,0,.4);*/\r\n    border-radius: 30px;\r\n    align-items: center;\r\n    padding:20px;\r\n    height: 100%; /* Add this line */\r\n    max-height:300px;\r\n}\r\n#milkyWayAnim\r\n{\r\n    height:auto;\r\n    max-height:290px;\r\n}\r\n#banner\r\n{\r\n    display:flex;\r\n    width:100%;\r\n    height:100%;\r\n    max-height:300px;\r\n    justify-content: center;\r\n}\r\n#gallery{\r\n    display: flex;\r\n    gap:4vmin;\r\n    user-select:none;\r\n    position:relative;\r\n    left:29%;\r\n    right:29%;\r\n    justify-content: center;\r\n    gap: 1.5rem;\r\n    padding: 20px;  /* Add padding to ensure no content is touching the edges */\r\n    box-sizing: border-box;  /* Include padding and border in the element's total width and height */\r\n}\r\n#gallery>img{\r\n    width:39vmin;\r\n    height:56vmin;\r\n    object-fit:cover;\r\n    object-position: 100% center;}\r\n#sloganContainer\r\n{\r\n    display:flex;\r\n    flex-direction: column;\r\n    font-family: 'Slogan';\r\n    align-items: center;\r\n    font-size:3rem;\r\n    color:black;\r\n    -webkit-text-stroke-width: 1px;\r\n    -webkit-text-stroke-color: white;\r\n    \r\n    \r\n}\r\n@media only screen and (max-width: 3000px){\r\n    #content{\r\n        overflow-x: auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 2000px){\r\n    #content{\r\n        overflow-x: hidden;\r\n    }\r\n}\r\n@media only screen and (max-width: 1800px){\r\n    #content{\r\n        overflow-x: auto;\r\n    }\r\n}\r\n@media only screen and (max-width: 700px){\r\n\r\n    #sloganContainer{\r\n        font-size:1.4rem;\r\n        -webkit-text-stroke-width: .2px;\r\n    }\r\n    #milkyWayAnim{\r\n        max-height: 150px;\r\n    }\r\n    #homeContainer{\r\n        display:flex;\r\n        margin-top:0;\r\n    }\r\n    #gallery{\r\n        left:0;\r\n        right:0;\r\n    }\r\n@media only screen and (max-width: 920px),screen and (max-height: 420px)  {\r\n    #sloganContainer{\r\n        font-size:1.4rem;\r\n        -webkit-text-stroke-width: .2px;\r\n    }\r\n    #milkyWayAnim{\r\n        max-height: 150px;\r\n    }\r\n    #homeContainer{\r\n        display:flex;\r\n        margin-top:0;\r\n    }\r\n    #gallery{\r\n        left:0;\r\n        right:0;\r\n        padding-left:2300px;\r\n\r\n    }\r\n    #gallery>img{\r\n        width:70vmin;\r\n        height:100vmin;\r\n        object-fit:cover;\r\n        object-position: 100% center;\r\n    }\r\n\r\n}\r\n@media only screen and (max-width: 431px), screen and (max-height: 950px)\r\n{\r\n    #gallery{\r\n        margin-top:20px;\r\n        padding-left:1900px;\r\n        padding-bottom:50px;\r\n    }\r\n}\r\n@media only screen and (max-width: 420px), screen and (max-height: 930px)\r\n{\r\n    #homeContainer{\r\n        display:flex;\r\n    }\r\n    #gallery{\r\n        margin-top:20px;\r\n        padding-left:1800px;\r\n    }\r\n    }\r\n    #gallery>img{\r\n        width:70vmin;\r\n        height:100vmin;\r\n        object-fit:cover;\r\n        object-position: 100% center;\r\n\r\n    }\r\n    #content{\r\n        padding-bottom: 40px;\r\n\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+
+
+
+`, "",{"version":3,"sources":["webpack://./styles/home.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,+DAAiE;AACrE;AACA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;;EAEA;IACE,sBAAsB;IACtB;4CAC2C;EAC7C;AACF;IACI,YAAY;IACZ,UAAU;IACV,WAAW;IACX,gBAAgB;AACpB;AACA;;IAEI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,SAAS;IACT,sBAAsB;AAC1B;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,SAAS;IACT,WAAW;IACX,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,UAAU;IACV,oCAAoC;IACpC,YAAY;IACZ,kBAAkB;IAClB,kBAAkB;IAClB,kBAAkB;IAClB,SAAS;AACb;AACA;IACI,oBAAoB;IACpB,cAAc;IACd,QAAQ;IACR,eAAe;IACf,WAAW;AACf;AACA;IACI,sBAAsB;IACtB,cAAc;IACd,QAAQ;IACR,gBAAgB;AACpB;AACA;CACC,WAAW;AACZ;AACA;IACI,mBAAmB;IACnB,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,eAAe;IACf,iBAAiB;IACjB,WAAW;IACX;;;;;;;;AAQJ;AACA;;IAEI;QACI,aAAa;IACjB;AACJ;AACA;IACI,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,iBAAiB;IACjB,UAAU;IACV,UAAU;IACV,yBAAyB;IACzB,sBAAsB;IACtB,gCAAgC;IAChC,mCAAmC;IACnC,oDAAoD;AACxD","sourcesContent":["@font-face {\r\n    font-family: 'Slogan';\r\n    src: url('../assets/KidslandAvenue-mLM09.ttf') format('truetype');\r\n}\r\n@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n\r\n  @font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n#homeWrapper{\r\n    display:flex;\r\n    width:100%;\r\n    height:100%;\r\n    overflow: hidden;\r\n}\r\n#milkyAnimationContainer\r\n{\r\n    display:flex;\r\n    height:100%;\r\n    width:50%;\r\n    z-index:1;\r\n    box-sizing: border-box;\r\n}\r\n#rightWrapper{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:60%;\r\n    height:100%;\r\n    font-size:2.4rem;\r\n}\r\n#textContainer{\r\n    display:flex;\r\n    flex-direction: column;\r\n    text-align:center;\r\n    box-sizing: border-box;\r\n    height:40%;\r\n    /*background-color: rgba(0,0,0,.1);*/\r\n    padding:20px;\r\n    border-radius:16px;\r\n    margin-right:200px;\r\n    position: relative;\r\n    z-index:2;\r\n}\r\nh2{\r\n    font-family: \"Shiny\";\r\n    font-size:6rem;\r\n    margin:0;\r\n    margin-top:1rem;\r\n    color:black;\r\n}\r\np{\r\n    font-family: \"Cartoon\";\r\n    font-size:3rem;\r\n    margin:0;\r\n    text-align: left;\r\n}\r\n#milkyWayAnim{\r\n height:100%;\r\n}\r\n#gallery{\r\n    margin-inline: auto;\r\n    position:relative;\r\n    height:800px;\r\n    width:1200px;\r\n    overflow:hidden;\r\n    position:relative;\r\n    right:200px;\r\n    mask-image:linear-gradient(to right\r\n    ,\r\n    rgba(0,0,0,0),\r\n    rgba(0,0,0,1)20%,\r\n    rgba(0,0,0,1) 85%,\r\n    rgba(0,0,0,0)\r\n    )\r\n    \r\n}\r\n@keyframes scrollLeft\r\n{\r\n    to{\r\n        right:-2500px;\r\n    }\r\n}\r\n.image{\r\n    height:600px;\r\n    width:500px;\r\n    border-radius: 6px;\r\n    object-fit: cover;\r\n    object-position: center;\r\n    position:absolute;\r\n    right:100%;\r\n    z-index: 0;\r\n    animation-name:scrollLeft;\r\n    animation-duration:30s;\r\n    animation-timing-function:linear;\r\n    animation-iteration-count: infinite;\r\n    animation-delay: calc(30s / 7 * (7 - var(--n)) * -1);\r\n}\r\n\r\n\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -576,6 +528,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
      url(${___CSS_LOADER_URL_REPLACEMENT_4___});
 
 }
+*{
+    margin:0;
+    padding:0;
+}
 html,body{
     
     height:100%;
@@ -585,6 +541,7 @@ html,body{
 body{
     overflow-x:hidden;
 }
+
 #content{
     display:flex;
     flex-direction: column;
@@ -593,23 +550,23 @@ body{
     align-items: center;
     justify-content: center;
     background-color: #EAD8ED ;
-    height: fit-content; /* Add this line */;
+    overflow:auto;
+    height: 100%; /* Add this line */;
 }
 #menuContainer{
     display:grid;
     grid-template-columns: 2fr 2fr;
-    grid-template-rows:250px auto;
+    grid-template-rows:2fr auto;
     width:60%;
+    height:100%;
     margin: 20px auto; /* Center the container */ 
     background-color: #EAD8ED;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     justify-content: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
     border: 10px solid #5c62a5;
     background-color: #F5EBE0;
-    
+    overflow: auto;
 }   
 #foodText{
     display:flex;
@@ -665,9 +622,9 @@ body{
 {
     text-align:left;
     box-sizing: border-box; 
-    margin-top:55px;
     font-family: 'Cartoon';
-    font-size: 4.2rem;
+    font-size: 4rem;
+    margin-top:30px;
     color:#6F515F;
     padding-left:20px;
     border-bottom: 3px dotted #5c62a5;
@@ -679,7 +636,7 @@ body{
     border:none;
 }
 #description{
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-family: 'Description';
     color:black;
 }
@@ -718,6 +675,7 @@ body{
     justify-content: center;
     position:relative;
     margin-left:1px;
+    padding:30px;
 }
 @media only screen and (max-width: 950px),screen and (max-height: 420px)  {
     #content{
@@ -811,7 +769,7 @@ body{
     max-height:150px;
     align-self: center;
     }
-}`, "",{"version":3,"sources":["webpack://./styles/styles.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;IACtB;4CAC2C;EAC7C;;AAEF;IACI,0BAA0B;IAC1B;;4CAE4C;;AAEhD;AACA;;IAEI,WAAW;IACX,SAAS;IACT,SAAS;AACb;AACA;IACI,iBAAiB;AACrB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,UAAU;IACV,sBAAsB;IACtB,mBAAmB;IACnB,uBAAuB;IACvB,0BAA0B;IAC1B,mBAAmB,EAAE,kBAAkB;AAC3C;AACA;IACI,YAAY;IACZ,8BAA8B;IAC9B,6BAA6B;IAC7B,SAAS;IACT,iBAAiB,EAAE,yBAAyB;IAC5C,yBAAyB;IACzB,mBAAmB;IACnB,4EAA4E;IAC5E,uBAAuB;IACvB,iBAAiB;IACjB,oBAAoB;IACpB,0BAA0B;IAC1B,yBAAyB;;AAE7B;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,iCAAiC;IACjC,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;IAClB,2CAA2C;;AAE/C;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,gBAAgB;IAChB,mBAAmB;IACnB,oBAAoB;AACxB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,eAAe;IACf,oBAAoB,CAAC;;AAEzB;;IAEI,eAAe;IACf,sBAAsB;IACtB,eAAe;IACf,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,iBAAiB;IACjB,iCAAiC;IACjC,sBAAsB;IACtB,gBAAgB,EAAE,yDAAyD;IAC3E,mBAAmB;AACvB;AACA;IACI,WAAW;AACf;AACA;IACI,eAAe;IACf,0BAA0B;IAC1B,WAAW;AACf;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,2CAA2C;;AAE/C;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;IACX,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,eAAe;AACnB;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n\r\n@font-face {\r\n    font-family: 'Description';\r\n    src: url('../assets/Queensides-3z7Ey.ttf') format('truetype'),\r\n     url('../assets/QueensidesLight-ZVj3l.ttf'),\r\n     url('../assets/QueensidesMedium-x30zV.ttf');\r\n\r\n}\r\nhtml,body{\r\n    \r\n    height:100%;\r\n    padding:0;\r\n    margin: 0;\r\n}\r\nbody{\r\n    overflow-x:hidden;\r\n}\r\n#content{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:100%;\r\n    box-sizing: border-box;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: #EAD8ED ;\r\n    height: fit-content; /* Add this line */;\r\n}\r\n#menuContainer{\r\n    display:grid;\r\n    grid-template-columns: 2fr 2fr;\r\n    grid-template-rows:250px auto;\r\n    width:60%;\r\n    margin: 20px auto; /* Center the container */ \r\n    background-color: #EAD8ED;\r\n    border-radius: 25px;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    justify-content: center;\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n    border: 10px solid #5c62a5;\r\n    background-color: #F5EBE0;\r\n    \r\n}   \r\n#foodText{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:30px;\r\n}\r\n#foodTextLast{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    margin-top:1.2rem;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodPic{\r\n    height:auto;\r\n    max-height: 250px;\r\n    margin-top: 1.2rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#cookieContainerL{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-right:1px;\r\n    padding-bottom:20px;\r\n    /*min-height:342px;*/\r\n}\r\n#cookieContainerR{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px;\r\n    /*min-height:342px;*/}\r\n\r\n#foodTextL,#foodTextLast\r\n{\r\n    text-align:left;\r\n    box-sizing: border-box; \r\n    margin-top:55px;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    padding-left:20px;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    box-sizing: border-box; \r\n    margin-right:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodTextLast{\r\n    border:none;\r\n}\r\n#description{\r\n    font-size: 2rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n}\r\n#foodTwo{\r\n    height:auto;\r\n    max-height: 300px;\r\n    margin-top: 1.2rem;\r\n}\r\n#stamp{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#foodPicStardust{\r\n    height:auto;\r\n    max-height: 200px;\r\n    margin-top: 5rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#stampStardust{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#descriptionLast{\r\n    font-size: 1.5rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n    border-bottom: 0;\r\n}\r\n#cookieContainerLast{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    margin-left:1px;\r\n}\r\n@media only screen and (max-width: 950px),screen and (max-height: 420px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 700px),screen and (max-height: 400px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) {\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/styles.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;IACtB;4CAC2C;EAC7C;;AAEF;IACI,0BAA0B;IAC1B;;4CAE4C;;AAEhD;AACA;IACI,QAAQ;IACR,SAAS;AACb;AACA;;IAEI,WAAW;IACX,SAAS;IACT,SAAS;AACb;AACA;IACI,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,sBAAsB;IACtB,UAAU;IACV,sBAAsB;IACtB,mBAAmB;IACnB,uBAAuB;IACvB,0BAA0B;IAC1B,aAAa;IACb,YAAY,EAAE,kBAAkB;AACpC;AACA;IACI,YAAY;IACZ,8BAA8B;IAC9B,2BAA2B;IAC3B,SAAS;IACT,WAAW;IACX,iBAAiB,EAAE,yBAAyB;IAC5C,yBAAyB;IACzB,mBAAmB;IACnB,4EAA4E;IAC5E,uBAAuB;IACvB,0BAA0B;IAC1B,yBAAyB;IACzB,cAAc;AAClB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,iCAAiC;IACjC,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;IAClB,2CAA2C;;AAE/C;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,gBAAgB;IAChB,mBAAmB;IACnB,oBAAoB;AACxB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,eAAe;IACf,oBAAoB,CAAC;;AAEzB;;IAEI,eAAe;IACf,sBAAsB;IACtB,sBAAsB;IACtB,eAAe;IACf,eAAe;IACf,aAAa;IACb,iBAAiB;IACjB,iCAAiC;IACjC,sBAAsB;IACtB,gBAAgB,EAAE,yDAAyD;IAC3E,mBAAmB;AACvB;AACA;IACI,WAAW;AACf;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;AACf;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,2CAA2C;;AAE/C;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;IACX,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,eAAe;IACf,YAAY;AAChB;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n\r\n@font-face {\r\n    font-family: 'Description';\r\n    src: url('../assets/Queensides-3z7Ey.ttf') format('truetype'),\r\n     url('../assets/QueensidesLight-ZVj3l.ttf'),\r\n     url('../assets/QueensidesMedium-x30zV.ttf');\r\n\r\n}\r\n*{\r\n    margin:0;\r\n    padding:0;\r\n}\r\nhtml,body{\r\n    \r\n    height:100%;\r\n    padding:0;\r\n    margin: 0;\r\n}\r\nbody{\r\n    overflow-x:hidden;\r\n}\r\n\r\n#content{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:100%;\r\n    box-sizing: border-box;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: #EAD8ED ;\r\n    overflow:auto;\r\n    height: 100%; /* Add this line */;\r\n}\r\n#menuContainer{\r\n    display:grid;\r\n    grid-template-columns: 2fr 2fr;\r\n    grid-template-rows:2fr auto;\r\n    width:60%;\r\n    height:100%;\r\n    margin: 20px auto; /* Center the container */ \r\n    background-color: #EAD8ED;\r\n    border-radius: 25px;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    justify-content: center;\r\n    border: 10px solid #5c62a5;\r\n    background-color: #F5EBE0;\r\n    overflow: auto;\r\n}   \r\n#foodText{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:30px;\r\n}\r\n#foodTextLast{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    margin-top:1.2rem;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodPic{\r\n    height:auto;\r\n    max-height: 250px;\r\n    margin-top: 1.2rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#cookieContainerL{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-right:1px;\r\n    padding-bottom:20px;\r\n    /*min-height:342px;*/\r\n}\r\n#cookieContainerR{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px;\r\n    /*min-height:342px;*/}\r\n\r\n#foodTextL,#foodTextLast\r\n{\r\n    text-align:left;\r\n    box-sizing: border-box; \r\n    font-family: 'Cartoon';\r\n    font-size: 4rem;\r\n    margin-top:30px;\r\n    color:#6F515F;\r\n    padding-left:20px;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    box-sizing: border-box; \r\n    margin-right:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodTextLast{\r\n    border:none;\r\n}\r\n#description{\r\n    font-size: 1.4rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n}\r\n#foodTwo{\r\n    height:auto;\r\n    max-height: 300px;\r\n    margin-top: 1.2rem;\r\n}\r\n#stamp{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#foodPicStardust{\r\n    height:auto;\r\n    max-height: 200px;\r\n    margin-top: 5rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#stampStardust{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#descriptionLast{\r\n    font-size: 1.5rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n    border-bottom: 0;\r\n}\r\n#cookieContainerLast{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    margin-left:1px;\r\n    padding:30px;\r\n}\r\n@media only screen and (max-width: 950px),screen and (max-height: 420px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 700px),screen and (max-height: 400px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) {\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18704,9 +18662,53 @@ __webpack_require__.r(__webpack_exports__);
 
 const homeDiv =()=>
 {   
+    const homeContainer = document.createElement("div");
+    homeContainer.id="homeWrapper";
+    //
+    const milkyAnimationContainer = document.createElement("div");
+    milkyAnimationContainer.id="milkyAnimationContainer";
+    const milkyWayAnim = document.createElement("img");
+
+    milkyWayAnim.src = _assets_milkyAnimation_gif__WEBPACK_IMPORTED_MODULE_0__;
+    milkyWayAnim.id = "milkyWayAnim";
+    milkyAnimationContainer.appendChild(milkyWayAnim);
+    homeContainer.appendChild(milkyAnimationContainer);
+    
+    document.getElementById("content").appendChild(homeContainer);
+
+    const rightWrapper = document.createElement("div");
+    rightWrapper.id="rightWrapper";
+    const textContainer = document.createElement("div");
+    textContainer.id ="textContainer";
+
+    const sloganTextHeader = document.createElement("h2");
+    sloganTextHeader.id ="sloganTextHeader";
+    sloganTextHeader.textContent ="Dream Express Cafe";
+    const sloganSubtext = document.createElement("p");
+    sloganSubtext.id="subTextHome";
+    sloganSubtext.textContent="Heavenly drinks, desserts, and a dreamy experience based on Cookie Run!";
+    textContainer.appendChild(sloganTextHeader);
+    textContainer.appendChild(sloganSubtext);
+    rightWrapper.appendChild(textContainer);
+    homeContainer.appendChild(rightWrapper);
+
+    //Start of infinite scroll animation
+    const gallery = document.createElement("div");
+    gallery.id="gallery";
+    const images = [_assets_cafeimages_1_jpg__WEBPACK_IMPORTED_MODULE_1__, _assets_cafeimages_7_jpg__WEBPACK_IMPORTED_MODULE_7__, _assets_cafeimages_2_jpg__WEBPACK_IMPORTED_MODULE_2__, _assets_cafeimages_8_jpg__WEBPACK_IMPORTED_MODULE_8__,_assets_cafeimages_4_jpg__WEBPACK_IMPORTED_MODULE_4__, _assets_cafeimages_5_jpg__WEBPACK_IMPORTED_MODULE_5__, _assets_cafeimages_6_jpg__WEBPACK_IMPORTED_MODULE_6__];
+    images.forEach((src,index) => {
+        const image = document.createElement("img");
+        image.src = src;
+        image.style=`--n:${index}`;
+        image.className=`image`;
+        image.setAttribute("draggable","false");
+        
+        gallery.appendChild(image);
+    });
+    rightWrapper.appendChild(gallery);
     //Creation of grid layout for home page
 
-    const bannerContainer = document.createElement("div");
+    /*const bannerContainer = document.createElement("div");
     bannerContainer.id="banner";
     const homeContainer = document.createElement("div");
     homeContainer.id = "homeContainer";
@@ -18714,7 +18716,7 @@ const homeDiv =()=>
     const milkyAnimationContainer = document.createElement("div");
     const milkyWayAnim = document.createElement("img");
 
-    milkyWayAnim.src = _assets_milkyAnimation_gif__WEBPACK_IMPORTED_MODULE_0__;
+    milkyWayAnim.src = milkyWayAnimation;
     milkyWayAnim.id = "milkyWayAnim";
     milkyAnimationContainer.appendChild(milkyWayAnim);
 
@@ -18737,7 +18739,7 @@ const homeDiv =()=>
     const galleryDiv = document.createElement("div");
     galleryDiv.id= "gallery";
     //Start of Gallery
-    const images = [_assets_cafeimages_1_jpg__WEBPACK_IMPORTED_MODULE_1__, _assets_cafeimages_7_jpg__WEBPACK_IMPORTED_MODULE_7__, _assets_cafeimages_2_jpg__WEBPACK_IMPORTED_MODULE_2__, _assets_cafeimages_8_jpg__WEBPACK_IMPORTED_MODULE_8__,_assets_cafeimages_4_jpg__WEBPACK_IMPORTED_MODULE_4__, _assets_cafeimages_5_jpg__WEBPACK_IMPORTED_MODULE_5__, _assets_cafeimages_6_jpg__WEBPACK_IMPORTED_MODULE_6__];
+    const images = [first, seventh, second, eigth,fourth, fifth, sixth];
     images.forEach((src) => {
         const image = document.createElement("img");
         image.src = src;
@@ -18750,7 +18752,7 @@ const homeDiv =()=>
     
     //Attach gallery to div
     document.getElementById("content").appendChild(galleryDiv);
-
+    */
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homeDiv);
@@ -19081,17 +19083,6 @@ function initGalleryEvents() {
 
 /***/ }),
 
-/***/ "./assets/Cookie_run_logo.png":
-/*!************************************!*\
-  !*** ./assets/Cookie_run_logo.png ***!
-  \************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "27477ae9d216323c01aa.png";
-
-/***/ }),
-
 /***/ "./assets/KidslandAvenue-mLM09.ttf":
 /*!*****************************************!*\
   !*** ./assets/KidslandAvenue-mLM09.ttf ***!
@@ -19100,6 +19091,17 @@ module.exports = __webpack_require__.p + "27477ae9d216323c01aa.png";
 
 "use strict";
 module.exports = __webpack_require__.p + "6b696bd95c6647ee1b6b.ttf";
+
+/***/ }),
+
+/***/ "./assets/Logo.png":
+/*!*************************!*\
+  !*** ./assets/Logo.png ***!
+  \*************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "977e3bdd8176d16d028a.png";
 
 /***/ }),
 
@@ -19264,7 +19266,7 @@ module.exports = __webpack_require__.p + "e33bc2c3a64039ec9807.jpg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "06093a7eda4c14c1f8b2.gif";
+module.exports = __webpack_require__.p + "add1d180005129e0fe64.gif";
 
 /***/ }),
 

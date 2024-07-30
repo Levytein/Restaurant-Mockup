@@ -119,17 +119,20 @@ const headerDiv = (() => {
   buttonContainer.id ="buttonContainer";
   const homeButton = document.createElement("button");
   homeButton.textContent = "Home";
+  homeButton.className = "navButton";
   homeButton.id = "homeButton";
   buttonContainer.appendChild(homeButton);
 
   const menuButton = document.createElement("button");
   menuButton.textContent = "Menu";
   menuButton.id = "menuButton";
+  menuButton.className = "navButton";
   buttonContainer.appendChild(menuButton);
 
   const aboutButton = document.createElement("button");
   aboutButton.textContent = "About";
   aboutButton.id = "aboutButton";
+  aboutButton.className = "navButton";
   buttonContainer.appendChild(aboutButton);
   navigationContainer.appendChild(buttonContainer);
 
@@ -139,6 +142,97 @@ const headerDiv = (() => {
 });
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerDiv);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./styles/about.css":
+/*!****************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./styles/about.css ***!
+  \****************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/Queensides-3z7Ey.ttf */ "./assets/Queensides-3z7Ey.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/QueensidesLight-ZVj3l.ttf */ "./assets/QueensidesLight-ZVj3l.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/QueensidesMedium-x30zV.ttf */ "./assets/QueensidesMedium-x30zV.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/KidslandAvenue-mLM09.ttf */ "./assets/KidslandAvenue-mLM09.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
+var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
+    font-family: 'Description';
+    src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format('truetype'),
+     url(${___CSS_LOADER_URL_REPLACEMENT_1___}),
+     url(${___CSS_LOADER_URL_REPLACEMENT_2___});
+
+}
+@font-face {
+    font-family: 'Slogan';
+    src: url(${___CSS_LOADER_URL_REPLACEMENT_3___}) format('truetype');
+}
+#aboutContainer{
+    display:flex;
+    justify-content: center;
+    height:70%;
+    width:50%;
+    border-radius:16px;
+    box-sizing: border-box;
+    padding:40px;
+}
+#aboutTextContainer{
+    display:flex;
+    flex-direction: column;
+    width:50%;
+}
+#pictureContainer{
+    width:50%;
+    align-content: center;
+}
+#aboutImg{
+    height:auto;
+    width:100%;
+    border-radius: 50%;
+}
+#headText{
+    font-family: "Slogan";
+    font-size:5rem;
+    color:#6f515f;
+}
+#subText{
+    font-family: "Description";
+    font-size:1.5rem;
+}
+#contactButton{
+    font-family: "Slogan";
+    margin-top:20px;
+    border-radius:16px;
+    font-size: 2.4rem;
+    align-self: left;
+    width:40%;
+    background-color: #BEACDB;
+    color:#6f515f;
+}
+`, "",{"version":3,"sources":["webpack://./styles/about.css"],"names":[],"mappings":"AAAA;IACI,0BAA0B;IAC1B;;4CAE4C;;AAEhD;AACA;IACI,qBAAqB;IACrB,+DAAiE;AACrE;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,UAAU;IACV,SAAS;IACT,kBAAkB;IAClB,sBAAsB;IACtB,YAAY;AAChB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,SAAS;AACb;AACA;IACI,SAAS;IACT,qBAAqB;AACzB;AACA;IACI,WAAW;IACX,UAAU;IACV,kBAAkB;AACtB;AACA;IACI,qBAAqB;IACrB,cAAc;IACd,aAAa;AACjB;AACA;IACI,0BAA0B;IAC1B,gBAAgB;AACpB;AACA;IACI,qBAAqB;IACrB,eAAe;IACf,kBAAkB;IAClB,iBAAiB;IACjB,gBAAgB;IAChB,SAAS;IACT,yBAAyB;IACzB,aAAa;AACjB","sourcesContent":["@font-face {\r\n    font-family: 'Description';\r\n    src: url('../assets/Queensides-3z7Ey.ttf') format('truetype'),\r\n     url('../assets/QueensidesLight-ZVj3l.ttf'),\r\n     url('../assets/QueensidesMedium-x30zV.ttf');\r\n\r\n}\r\n@font-face {\r\n    font-family: 'Slogan';\r\n    src: url('../assets/KidslandAvenue-mLM09.ttf') format('truetype');\r\n}\r\n#aboutContainer{\r\n    display:flex;\r\n    justify-content: center;\r\n    height:70%;\r\n    width:50%;\r\n    border-radius:16px;\r\n    box-sizing: border-box;\r\n    padding:40px;\r\n}\r\n#aboutTextContainer{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:50%;\r\n}\r\n#pictureContainer{\r\n    width:50%;\r\n    align-content: center;\r\n}\r\n#aboutImg{\r\n    height:auto;\r\n    width:100%;\r\n    border-radius: 50%;\r\n}\r\n#headText{\r\n    font-family: \"Slogan\";\r\n    font-size:5rem;\r\n    color:#6f515f;\r\n}\r\n#subText{\r\n    font-family: \"Description\";\r\n    font-size:1.5rem;\r\n}\r\n#contactButton{\r\n    font-family: \"Slogan\";\r\n    margin-top:20px;\r\n    border-radius:16px;\r\n    font-size: 2.4rem;\r\n    align-self: left;\r\n    width:40%;\r\n    background-color: #BEACDB;\r\n    color:#6f515f;\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
@@ -266,7 +360,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
     margin-right:auto;
     align-items: center;
 }
-button{
+.navButton{
     background:none;
     border:none;
     font-family: 'Shiny';
@@ -332,7 +426,7 @@ button:hover{
     button{
         font-size:2rem;
     }
-}`, "",{"version":3,"sources":["webpack://./styles/header.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;AACF;IACI,YAAY;IACZ,qBAAqB;IACrB,SAAS;IACT,QAAQ;IACR,UAAU;IACV,YAAY;AAChB;AACA;;IAEI,YAAY;IACZ,UAAU;AACd;AACA;IACI,YAAY;IACZ,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,sBAAsB;IACtB,SAAS;IACT,yBAAyB;IACzB,iBAAiB;IACjB,UAAU;IACV,gBAAgB;IAChB,iBAAiB;IACjB,mBAAmB;AACvB;AACA;IACI,eAAe;IACf,WAAW;IACX,oBAAoB;IACpB,cAAc;IACd,WAAW;IACX,oBAAoB;IACpB,iBAAiB;AACrB;AACA;IACI,yBAAyB;AAC7B;AACA;IACI,YAAY;IACZ,QAAQ;IACR,UAAU;IACV,mBAAmB;IACnB,mBAAmB;AACvB;AACA;IACI;QACI,cAAc;QACd,YAAY;IAChB;;AAEJ;AACA;IACI;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,uBAAuB;IAC3B;IACA;QACI,eAAe;QACf,kBAAkB;IACtB;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,uBAAuB;QACvB,cAAc;IAClB;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,eAAe;QACf,YAAY;QACZ,QAAQ;IACZ;IACA;QACI,cAAc;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n#header{\r\n    display:flex;\r\n    box-sizing:border-box;\r\n    padding:0;\r\n    margin:0;\r\n    width:100%;\r\n    height:100px;\r\n}\r\n#logoWrapper\r\n{\r\n    display:flex;\r\n    width:100%;\r\n}\r\n#header-logo{\r\n    height:100px;\r\n    background: none;\r\n}\r\n#navBar{\r\n    display:flex;\r\n    justify-content: center;\r\n    box-sizing: border-box;\r\n    gap:100px;\r\n    background-color: #BEACDB;\r\n    position:relative;\r\n    width:100%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    align-items: center;\r\n}\r\nbutton{\r\n    background:none;\r\n    border:none;\r\n    font-family: 'Shiny';\r\n    font-size:4rem;\r\n    color:white;\r\n    display:inline-block;\r\n    max-height: 100px;\r\n}\r\nbutton:hover{\r\n    text-decoration:underline;\r\n}\r\n#buttonContainer{\r\n    display:flex;\r\n    gap:50px;\r\n    width:100%;\r\n    justify-content:end;\r\n    margin-right:1.6rem;\r\n}\r\n@media only screen and (max-width: 1650px) {\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n\r\n}\r\n@media only screen and (max-width: 700px) {\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 920px),screen and (max-height: 400px)  {\r\n    #logoWrapper{\r\n        justify-content: center;\r\n    }\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    #buttonContainer{\r\n        justify-content: center;\r\n        margin-right:0;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) and (max-height: 950px)  {\r\n    #buttonContainer{\r\n        max-width:400px;\r\n        margin-top:0;\r\n        gap:10px;\r\n    }\r\n    button{\r\n        font-size:2rem;\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/header.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;AACF;IACI,YAAY;IACZ,qBAAqB;IACrB,SAAS;IACT,QAAQ;IACR,UAAU;IACV,YAAY;AAChB;AACA;;IAEI,YAAY;IACZ,UAAU;AACd;AACA;IACI,YAAY;IACZ,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,sBAAsB;IACtB,SAAS;IACT,yBAAyB;IACzB,iBAAiB;IACjB,UAAU;IACV,gBAAgB;IAChB,iBAAiB;IACjB,mBAAmB;AACvB;AACA;IACI,eAAe;IACf,WAAW;IACX,oBAAoB;IACpB,cAAc;IACd,WAAW;IACX,oBAAoB;IACpB,iBAAiB;AACrB;AACA;IACI,yBAAyB;AAC7B;AACA;IACI,YAAY;IACZ,QAAQ;IACR,UAAU;IACV,mBAAmB;IACnB,mBAAmB;AACvB;AACA;IACI;QACI,cAAc;QACd,YAAY;IAChB;;AAEJ;AACA;IACI;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,uBAAuB;IAC3B;IACA;QACI,eAAe;QACf,kBAAkB;IACtB;IACA;QACI,sBAAsB;QACtB,OAAO;IACX;IACA;QACI,uBAAuB;QACvB,cAAc;IAClB;IACA;QACI,cAAc;QACd,YAAY;IAChB;AACJ;AACA;IACI;QACI,eAAe;QACf,YAAY;QACZ,QAAQ;IACZ;IACA;QACI,cAAc;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n#header{\r\n    display:flex;\r\n    box-sizing:border-box;\r\n    padding:0;\r\n    margin:0;\r\n    width:100%;\r\n    height:100px;\r\n}\r\n#logoWrapper\r\n{\r\n    display:flex;\r\n    width:100%;\r\n}\r\n#header-logo{\r\n    height:100px;\r\n    background: none;\r\n}\r\n#navBar{\r\n    display:flex;\r\n    justify-content: center;\r\n    box-sizing: border-box;\r\n    gap:100px;\r\n    background-color: #BEACDB;\r\n    position:relative;\r\n    width:100%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    align-items: center;\r\n}\r\n.navButton{\r\n    background:none;\r\n    border:none;\r\n    font-family: 'Shiny';\r\n    font-size:4rem;\r\n    color:white;\r\n    display:inline-block;\r\n    max-height: 100px;\r\n}\r\nbutton:hover{\r\n    text-decoration:underline;\r\n}\r\n#buttonContainer{\r\n    display:flex;\r\n    gap:50px;\r\n    width:100%;\r\n    justify-content:end;\r\n    margin-right:1.6rem;\r\n}\r\n@media only screen and (max-width: 1650px) {\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n\r\n}\r\n@media only screen and (max-width: 700px) {\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 920px),screen and (max-height: 400px)  {\r\n    #logoWrapper{\r\n        justify-content: center;\r\n    }\r\n    #header-logo{\r\n        max-width:200px;\r\n        position: relative;\r\n    }\r\n    #navBar{\r\n        flex-direction: column;\r\n        gap:0px;\r\n    }\r\n    #buttonContainer{\r\n        justify-content: center;\r\n        margin-right:0;\r\n    }\r\n    button{\r\n        font-size:3rem;\r\n        margin-top:0;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) and (max-height: 950px)  {\r\n    #buttonContainer{\r\n        max-width:400px;\r\n        margin-top:0;\r\n        gap:10px;\r\n    }\r\n    button{\r\n        font-size:2rem;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -395,6 +489,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
     display:flex;
     height:100%;
     width:50%;
+    align-items: center;
     z-index:1;
     box-sizing: border-box;
 }
@@ -425,20 +520,20 @@ h2{
     margin-top:1rem;
     color:black;
 }
-p{
+#subTextHome{
     font-family: "Cartoon";
     font-size:3rem;
     margin:0;
     text-align: left;
 }
 #milkyWayAnim{
- height:100%;
+ height:70%;
 }
 #gallery{
     margin-inline: auto;
     position:relative;
     height:800px;
-    width:1200px;
+    width:1270px;
     overflow:hidden;
     position:relative;
     right:200px;
@@ -446,7 +541,7 @@ p{
     ,
     rgba(0,0,0,0),
     rgba(0,0,0,1)20%,
-    rgba(0,0,0,1) 85%,
+    rgba(0,0,0,1) 98%,
     rgba(0,0,0,0)
     )
     
@@ -475,7 +570,7 @@ p{
 
 
 
-`, "",{"version":3,"sources":["webpack://./styles/home.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,+DAAiE;AACrE;AACA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;;EAEA;IACE,sBAAsB;IACtB;4CAC2C;EAC7C;AACF;IACI,YAAY;IACZ,UAAU;IACV,WAAW;IACX,gBAAgB;AACpB;AACA;;IAEI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,SAAS;IACT,sBAAsB;AAC1B;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,SAAS;IACT,WAAW;IACX,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,UAAU;IACV,oCAAoC;IACpC,YAAY;IACZ,kBAAkB;IAClB,kBAAkB;IAClB,kBAAkB;IAClB,SAAS;AACb;AACA;IACI,oBAAoB;IACpB,cAAc;IACd,QAAQ;IACR,eAAe;IACf,WAAW;AACf;AACA;IACI,sBAAsB;IACtB,cAAc;IACd,QAAQ;IACR,gBAAgB;AACpB;AACA;CACC,WAAW;AACZ;AACA;IACI,mBAAmB;IACnB,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,eAAe;IACf,iBAAiB;IACjB,WAAW;IACX;;;;;;;;AAQJ;AACA;;IAEI;QACI,aAAa;IACjB;AACJ;AACA;IACI,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,iBAAiB;IACjB,UAAU;IACV,UAAU;IACV,yBAAyB;IACzB,sBAAsB;IACtB,gCAAgC;IAChC,mCAAmC;IACnC,oDAAoD;AACxD","sourcesContent":["@font-face {\r\n    font-family: 'Slogan';\r\n    src: url('../assets/KidslandAvenue-mLM09.ttf') format('truetype');\r\n}\r\n@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n\r\n  @font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n#homeWrapper{\r\n    display:flex;\r\n    width:100%;\r\n    height:100%;\r\n    overflow: hidden;\r\n}\r\n#milkyAnimationContainer\r\n{\r\n    display:flex;\r\n    height:100%;\r\n    width:50%;\r\n    z-index:1;\r\n    box-sizing: border-box;\r\n}\r\n#rightWrapper{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:60%;\r\n    height:100%;\r\n    font-size:2.4rem;\r\n}\r\n#textContainer{\r\n    display:flex;\r\n    flex-direction: column;\r\n    text-align:center;\r\n    box-sizing: border-box;\r\n    height:40%;\r\n    /*background-color: rgba(0,0,0,.1);*/\r\n    padding:20px;\r\n    border-radius:16px;\r\n    margin-right:200px;\r\n    position: relative;\r\n    z-index:2;\r\n}\r\nh2{\r\n    font-family: \"Shiny\";\r\n    font-size:6rem;\r\n    margin:0;\r\n    margin-top:1rem;\r\n    color:black;\r\n}\r\np{\r\n    font-family: \"Cartoon\";\r\n    font-size:3rem;\r\n    margin:0;\r\n    text-align: left;\r\n}\r\n#milkyWayAnim{\r\n height:100%;\r\n}\r\n#gallery{\r\n    margin-inline: auto;\r\n    position:relative;\r\n    height:800px;\r\n    width:1200px;\r\n    overflow:hidden;\r\n    position:relative;\r\n    right:200px;\r\n    mask-image:linear-gradient(to right\r\n    ,\r\n    rgba(0,0,0,0),\r\n    rgba(0,0,0,1)20%,\r\n    rgba(0,0,0,1) 85%,\r\n    rgba(0,0,0,0)\r\n    )\r\n    \r\n}\r\n@keyframes scrollLeft\r\n{\r\n    to{\r\n        right:-2500px;\r\n    }\r\n}\r\n.image{\r\n    height:600px;\r\n    width:500px;\r\n    border-radius: 6px;\r\n    object-fit: cover;\r\n    object-position: center;\r\n    position:absolute;\r\n    right:100%;\r\n    z-index: 0;\r\n    animation-name:scrollLeft;\r\n    animation-duration:30s;\r\n    animation-timing-function:linear;\r\n    animation-iteration-count: infinite;\r\n    animation-delay: calc(30s / 7 * (7 - var(--n)) * -1);\r\n}\r\n\r\n\r\n\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./styles/home.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,+DAAiE;AACrE;AACA;IACI,oBAAoB;IACpB,+DAAkD;EACpD;;EAEA;IACE,sBAAsB;IACtB;4CAC2C;EAC7C;AACF;IACI,YAAY;IACZ,UAAU;IACV,WAAW;IACX,gBAAgB;AACpB;AACA;;IAEI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,mBAAmB;IACnB,SAAS;IACT,sBAAsB;AAC1B;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,SAAS;IACT,WAAW;IACX,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,UAAU;IACV,oCAAoC;IACpC,YAAY;IACZ,kBAAkB;IAClB,kBAAkB;IAClB,kBAAkB;IAClB,SAAS;AACb;AACA;IACI,oBAAoB;IACpB,cAAc;IACd,QAAQ;IACR,eAAe;IACf,WAAW;AACf;AACA;IACI,sBAAsB;IACtB,cAAc;IACd,QAAQ;IACR,gBAAgB;AACpB;AACA;CACC,UAAU;AACX;AACA;IACI,mBAAmB;IACnB,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,eAAe;IACf,iBAAiB;IACjB,WAAW;IACX;;;;;;;;AAQJ;AACA;;IAEI;QACI,aAAa;IACjB;AACJ;AACA;IACI,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,iBAAiB;IACjB,UAAU;IACV,UAAU;IACV,yBAAyB;IACzB,sBAAsB;IACtB,gCAAgC;IAChC,mCAAmC;IACnC,oDAAoD;AACxD","sourcesContent":["@font-face {\r\n    font-family: 'Slogan';\r\n    src: url('../assets/KidslandAvenue-mLM09.ttf') format('truetype');\r\n}\r\n@font-face {\r\n    font-family: 'Shiny';\r\n    src: url('../assets/Shiny.ttf') format('truetype');\r\n  }\r\n\r\n  @font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n#homeWrapper{\r\n    display:flex;\r\n    width:100%;\r\n    height:100%;\r\n    overflow: hidden;\r\n}\r\n#milkyAnimationContainer\r\n{\r\n    display:flex;\r\n    height:100%;\r\n    width:50%;\r\n    align-items: center;\r\n    z-index:1;\r\n    box-sizing: border-box;\r\n}\r\n#rightWrapper{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:60%;\r\n    height:100%;\r\n    font-size:2.4rem;\r\n}\r\n#textContainer{\r\n    display:flex;\r\n    flex-direction: column;\r\n    text-align:center;\r\n    box-sizing: border-box;\r\n    height:40%;\r\n    /*background-color: rgba(0,0,0,.1);*/\r\n    padding:20px;\r\n    border-radius:16px;\r\n    margin-right:200px;\r\n    position: relative;\r\n    z-index:2;\r\n}\r\nh2{\r\n    font-family: \"Shiny\";\r\n    font-size:6rem;\r\n    margin:0;\r\n    margin-top:1rem;\r\n    color:black;\r\n}\r\n#subTextHome{\r\n    font-family: \"Cartoon\";\r\n    font-size:3rem;\r\n    margin:0;\r\n    text-align: left;\r\n}\r\n#milkyWayAnim{\r\n height:70%;\r\n}\r\n#gallery{\r\n    margin-inline: auto;\r\n    position:relative;\r\n    height:800px;\r\n    width:1270px;\r\n    overflow:hidden;\r\n    position:relative;\r\n    right:200px;\r\n    mask-image:linear-gradient(to right\r\n    ,\r\n    rgba(0,0,0,0),\r\n    rgba(0,0,0,1)20%,\r\n    rgba(0,0,0,1) 98%,\r\n    rgba(0,0,0,0)\r\n    )\r\n    \r\n}\r\n@keyframes scrollLeft\r\n{\r\n    to{\r\n        right:-2500px;\r\n    }\r\n}\r\n.image{\r\n    height:600px;\r\n    width:500px;\r\n    border-radius: 6px;\r\n    object-fit: cover;\r\n    object-position: center;\r\n    position:absolute;\r\n    right:100%;\r\n    z-index: 0;\r\n    animation-name:scrollLeft;\r\n    animation-duration:30s;\r\n    animation-timing-function:linear;\r\n    animation-iteration-count: infinite;\r\n    animation-delay: calc(30s / 7 * (7 - var(--n)) * -1);\r\n}\r\n\r\n\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -531,6 +626,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
 *{
     margin:0;
     padding:0;
+    scrollbar-width:thin;
+    scrollbar-color: hsla(0, 0%, 46%, 0.5) transparent;
 }
 html,body{
     
@@ -769,7 +866,7 @@ body{
     max-height:150px;
     align-self: center;
     }
-}`, "",{"version":3,"sources":["webpack://./styles/styles.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;IACtB;4CAC2C;EAC7C;;AAEF;IACI,0BAA0B;IAC1B;;4CAE4C;;AAEhD;AACA;IACI,QAAQ;IACR,SAAS;AACb;AACA;;IAEI,WAAW;IACX,SAAS;IACT,SAAS;AACb;AACA;IACI,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,sBAAsB;IACtB,UAAU;IACV,sBAAsB;IACtB,mBAAmB;IACnB,uBAAuB;IACvB,0BAA0B;IAC1B,aAAa;IACb,YAAY,EAAE,kBAAkB;AACpC;AACA;IACI,YAAY;IACZ,8BAA8B;IAC9B,2BAA2B;IAC3B,SAAS;IACT,WAAW;IACX,iBAAiB,EAAE,yBAAyB;IAC5C,yBAAyB;IACzB,mBAAmB;IACnB,4EAA4E;IAC5E,uBAAuB;IACvB,0BAA0B;IAC1B,yBAAyB;IACzB,cAAc;AAClB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,iCAAiC;IACjC,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;IAClB,2CAA2C;;AAE/C;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,gBAAgB;IAChB,mBAAmB;IACnB,oBAAoB;AACxB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,eAAe;IACf,oBAAoB,CAAC;;AAEzB;;IAEI,eAAe;IACf,sBAAsB;IACtB,sBAAsB;IACtB,eAAe;IACf,eAAe;IACf,aAAa;IACb,iBAAiB;IACjB,iCAAiC;IACjC,sBAAsB;IACtB,gBAAgB,EAAE,yDAAyD;IAC3E,mBAAmB;AACvB;AACA;IACI,WAAW;AACf;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;AACf;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,2CAA2C;;AAE/C;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;IACX,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,eAAe;IACf,YAAY;AAChB;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n\r\n@font-face {\r\n    font-family: 'Description';\r\n    src: url('../assets/Queensides-3z7Ey.ttf') format('truetype'),\r\n     url('../assets/QueensidesLight-ZVj3l.ttf'),\r\n     url('../assets/QueensidesMedium-x30zV.ttf');\r\n\r\n}\r\n*{\r\n    margin:0;\r\n    padding:0;\r\n}\r\nhtml,body{\r\n    \r\n    height:100%;\r\n    padding:0;\r\n    margin: 0;\r\n}\r\nbody{\r\n    overflow-x:hidden;\r\n}\r\n\r\n#content{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:100%;\r\n    box-sizing: border-box;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: #EAD8ED ;\r\n    overflow:auto;\r\n    height: 100%; /* Add this line */;\r\n}\r\n#menuContainer{\r\n    display:grid;\r\n    grid-template-columns: 2fr 2fr;\r\n    grid-template-rows:2fr auto;\r\n    width:60%;\r\n    height:100%;\r\n    margin: 20px auto; /* Center the container */ \r\n    background-color: #EAD8ED;\r\n    border-radius: 25px;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    justify-content: center;\r\n    border: 10px solid #5c62a5;\r\n    background-color: #F5EBE0;\r\n    overflow: auto;\r\n}   \r\n#foodText{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:30px;\r\n}\r\n#foodTextLast{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    margin-top:1.2rem;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodPic{\r\n    height:auto;\r\n    max-height: 250px;\r\n    margin-top: 1.2rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#cookieContainerL{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-right:1px;\r\n    padding-bottom:20px;\r\n    /*min-height:342px;*/\r\n}\r\n#cookieContainerR{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px;\r\n    /*min-height:342px;*/}\r\n\r\n#foodTextL,#foodTextLast\r\n{\r\n    text-align:left;\r\n    box-sizing: border-box; \r\n    font-family: 'Cartoon';\r\n    font-size: 4rem;\r\n    margin-top:30px;\r\n    color:#6F515F;\r\n    padding-left:20px;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    box-sizing: border-box; \r\n    margin-right:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodTextLast{\r\n    border:none;\r\n}\r\n#description{\r\n    font-size: 1.4rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n}\r\n#foodTwo{\r\n    height:auto;\r\n    max-height: 300px;\r\n    margin-top: 1.2rem;\r\n}\r\n#stamp{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#foodPicStardust{\r\n    height:auto;\r\n    max-height: 200px;\r\n    margin-top: 5rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#stampStardust{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#descriptionLast{\r\n    font-size: 1.5rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n    border-bottom: 0;\r\n}\r\n#cookieContainerLast{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    margin-left:1px;\r\n    padding:30px;\r\n}\r\n@media only screen and (max-width: 950px),screen and (max-height: 420px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 700px),screen and (max-height: 400px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) {\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/styles.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;IACtB;4CAC2C;EAC7C;;AAEF;IACI,0BAA0B;IAC1B;;4CAE4C;;AAEhD;AACA;IACI,QAAQ;IACR,SAAS;IACT,oBAAoB;IACpB,kDAAkD;AACtD;AACA;;IAEI,WAAW;IACX,SAAS;IACT,SAAS;AACb;AACA;IACI,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,sBAAsB;IACtB,UAAU;IACV,sBAAsB;IACtB,mBAAmB;IACnB,uBAAuB;IACvB,0BAA0B;IAC1B,aAAa;IACb,YAAY,EAAE,kBAAkB;AACpC;AACA;IACI,YAAY;IACZ,8BAA8B;IAC9B,2BAA2B;IAC3B,SAAS;IACT,WAAW;IACX,iBAAiB,EAAE,yBAAyB;IAC5C,yBAAyB;IACzB,mBAAmB;IACnB,4EAA4E;IAC5E,uBAAuB;IACvB,0BAA0B;IAC1B,yBAAyB;IACzB,cAAc;AAClB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,iCAAiC;IACjC,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,YAAY;IACZ,sBAAsB;IACtB,gBAAgB;IAChB,sBAAsB;IACtB,iBAAiB;IACjB,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,uBAAuB;IACvB,eAAe,EAAE,yDAAyD;IAC1E,mBAAmB;AACvB;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;IAClB,2CAA2C;;AAE/C;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,gBAAgB;IAChB,mBAAmB;IACnB,oBAAoB;AACxB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,iCAAiC;IACjC,eAAe;IACf,oBAAoB,CAAC;;AAEzB;;IAEI,eAAe;IACf,sBAAsB;IACtB,sBAAsB;IACtB,eAAe;IACf,eAAe;IACf,aAAa;IACb,iBAAiB;IACjB,iCAAiC;IACjC,sBAAsB;IACtB,gBAAgB,EAAE,yDAAyD;IAC3E,mBAAmB;AACvB;AACA;IACI,WAAW;AACf;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;AACf;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;AACtB;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,2CAA2C;;AAE/C;AACA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,KAAK;IACL,SAAS;AACb;AACA;IACI,iBAAiB;IACjB,0BAA0B;IAC1B,WAAW;IACX,gBAAgB;AACpB;AACA;IACI,YAAY;IACZ,uBAAuB;IACvB,iBAAiB;IACjB,eAAe;IACf,YAAY;AAChB;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,kBAAkB;IACtB;IACA;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ;AACA;IACI;QACI,gBAAgB;IACpB;IACA;QACI,WAAW;IACf;IACA;QACI,eAAe;IACnB;IACA;QACI,UAAU;IACd;IACA;QACI,eAAe;;IAEnB;IACA;;QAEI,gBAAgB;IACpB;IACA;QACI,cAAc;IAClB;IACA;IACA,gBAAgB;IAChB,kBAAkB;IAClB;AACJ","sourcesContent":["@font-face {\r\n    font-family: 'Cartoon';\r\n    src: url('../assets/StayworkRegular-axrEo.otf') format('truetype'),\r\n     url('../assets/StayworkRegular-Wy4P4.otf');\r\n  }\r\n\r\n@font-face {\r\n    font-family: 'Description';\r\n    src: url('../assets/Queensides-3z7Ey.ttf') format('truetype'),\r\n     url('../assets/QueensidesLight-ZVj3l.ttf'),\r\n     url('../assets/QueensidesMedium-x30zV.ttf');\r\n\r\n}\r\n*{\r\n    margin:0;\r\n    padding:0;\r\n    scrollbar-width:thin;\r\n    scrollbar-color: hsla(0, 0%, 46%, 0.5) transparent;\r\n}\r\nhtml,body{\r\n    \r\n    height:100%;\r\n    padding:0;\r\n    margin: 0;\r\n}\r\nbody{\r\n    overflow-x:hidden;\r\n}\r\n\r\n#content{\r\n    display:flex;\r\n    flex-direction: column;\r\n    width:100%;\r\n    box-sizing: border-box;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: #EAD8ED ;\r\n    overflow:auto;\r\n    height: 100%; /* Add this line */;\r\n}\r\n#menuContainer{\r\n    display:grid;\r\n    grid-template-columns: 2fr 2fr;\r\n    grid-template-rows:2fr auto;\r\n    width:60%;\r\n    height:100%;\r\n    margin: 20px auto; /* Center the container */ \r\n    background-color: #EAD8ED;\r\n    border-radius: 25px;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    justify-content: center;\r\n    border: 10px solid #5c62a5;\r\n    background-color: #F5EBE0;\r\n    overflow: auto;\r\n}   \r\n#foodText{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:30px;\r\n}\r\n#foodTextLast{\r\n    display:flex;\r\n    box-sizing: border-box; \r\n    text-align: left;\r\n    flex-direction: column;\r\n    margin-top:1.2rem;\r\n    font-family: 'Cartoon';\r\n    font-size: 4.2rem;\r\n    color:#6F515F;\r\n    justify-content: center;\r\n    margin-left:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodPic{\r\n    height:auto;\r\n    max-height: 250px;\r\n    margin-top: 1.2rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#cookieContainerL{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-right:1px;\r\n    padding-bottom:20px;\r\n    /*min-height:342px;*/\r\n}\r\n#cookieContainerR{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    margin-left:1px;\r\n    /*min-height:342px;*/}\r\n\r\n#foodTextL,#foodTextLast\r\n{\r\n    text-align:left;\r\n    box-sizing: border-box; \r\n    font-family: 'Cartoon';\r\n    font-size: 4rem;\r\n    margin-top:30px;\r\n    color:#6F515F;\r\n    padding-left:20px;\r\n    border-bottom: 3px dotted #5c62a5;\r\n    box-sizing: border-box; \r\n    margin-right:1px; /*To prevent double borders from overlapping too harshly*/\r\n    padding-bottom:20px;\r\n}\r\n#foodTextLast{\r\n    border:none;\r\n}\r\n#description{\r\n    font-size: 1.4rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n}\r\n#foodTwo{\r\n    height:auto;\r\n    max-height: 300px;\r\n    margin-top: 1.2rem;\r\n}\r\n#stamp{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#foodPicStardust{\r\n    height:auto;\r\n    max-height: 200px;\r\n    margin-top: 5rem;\r\n    /* filter: drop-shadow(0 0 0.10rem blue); */\r\n\r\n}\r\n#stampStardust{\r\n    max-height:120px;\r\n    position:absolute;\r\n    top:0;\r\n    left:50px;\r\n}\r\n#descriptionLast{\r\n    font-size: 1.5rem;\r\n    font-family: 'Description';\r\n    color:black;\r\n    border-bottom: 0;\r\n}\r\n#cookieContainerLast{\r\n    display:flex;\r\n    justify-content: center;\r\n    position:relative;\r\n    margin-left:1px;\r\n    padding:30px;\r\n}\r\n@media only screen and (max-width: 950px),screen and (max-height: 420px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 700px),screen and (max-height: 400px)  {\r\n    #content{\r\n        height:fit-content;\r\n    }\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}\r\n@media only screen and (max-width: 450px) {\r\n    #foodPicStardust{\r\n        max-height: 80px;\r\n    }\r\n    #cookieContainerR{\r\n        height:100%;\r\n    }\r\n    #stampStardust{\r\n        max-height:50px;\r\n    }\r\n    #menuContainer{\r\n        width:100%;\r\n    }\r\n    #stamp{\r\n        max-height:60px;\r\n\r\n    }\r\n    #foodTextL,#foodTextLast,#foodText\r\n    {\r\n        font-size:1.6rem;\r\n    }\r\n    #description{\r\n        font-size:1rem;\r\n    }\r\n    #foodPic{\r\n    max-height:150px;\r\n    align-self: center;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18145,6 +18242,59 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./styles/about.css":
+/*!**************************!*\
+  !*** ./styles/about.css ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_about_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!./about.css */ "./node_modules/css-loader/dist/cjs.js!./styles/about.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_about_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_about_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_about_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_about_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./styles/footer.css":
 /*!***************************!*\
   !*** ./styles/footer.css ***!
@@ -18630,6 +18780,57 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./pages/about.js":
+/*!************************!*\
+  !*** ./pages/about.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _assets_about_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/about.jpg */ "./assets/about.jpg");
+
+const aboutDiv = ()=>
+{
+    const aboutContainer = document.createElement("div");
+    aboutContainer.id = "aboutContainer";
+
+    const aboutTextContainer = document.createElement("div");
+    aboutTextContainer.id = "aboutTextContainer";
+    const aboutTextHead = document.createElement("h3");
+    aboutTextHead.id="headText";
+    aboutTextHead.textContent = "About Dream Express Cafe";
+    const aboutTextSub = document.createElement("p");
+    aboutTextSub.id="subText";
+    aboutTextSub.textContent= "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+    
+    const aboutContactButton = document.createElement("button");
+    aboutContactButton.id="contactButton";
+    aboutContactButton.textContent = "Contact Us";
+    
+    aboutTextContainer.appendChild(aboutTextHead);
+    aboutTextContainer.appendChild(aboutTextSub);
+    aboutTextContainer.appendChild(aboutContactButton);
+    aboutContainer.appendChild(aboutTextContainer);
+    document.getElementById("content").appendChild(aboutContainer);
+
+    const pictureContainer = document.createElement("div");
+    pictureContainer.id= "pictureContainer";
+    
+    const pictureAbout = document.createElement("img");
+    pictureAbout.id ="aboutImg";
+    pictureAbout.src =_assets_about_jpg__WEBPACK_IMPORTED_MODULE_0__;
+    pictureContainer.appendChild(pictureAbout);
+    aboutContainer.appendChild(pictureContainer);
+    return aboutContainer;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (aboutDiv);
+
+/***/ }),
+
 /***/ "./pages/home.js":
 /*!***********************!*\
   !*** ./pages/home.js ***!
@@ -18966,13 +19167,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/styles.css */ "./styles/styles.css");
 /* harmony import */ var _styles_header_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/header.css */ "./styles/header.css");
 /* harmony import */ var _styles_home_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/home.css */ "./styles/home.css");
-/* harmony import */ var _styles_footer_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/footer.css */ "./styles/footer.css");
-/* harmony import */ var _functions_firstLoad__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../functions/firstLoad */ "./functions/firstLoad.js");
-/* harmony import */ var _functions_cleanSlate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../functions/cleanSlate */ "./functions/cleanSlate.js");
-/* harmony import */ var _pages_home__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/home */ "./pages/home.js");
-/* harmony import */ var _pages_menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pages/menu */ "./pages/menu.js");
-/* harmony import */ var _functions_header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../functions/header */ "./functions/header.js");
-/* harmony import */ var _functions_footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../functions/footer */ "./functions/footer.js");
+/* harmony import */ var _styles_about_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/about.css */ "./styles/about.css");
+/* harmony import */ var _styles_footer_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/footer.css */ "./styles/footer.css");
+/* harmony import */ var _functions_firstLoad__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../functions/firstLoad */ "./functions/firstLoad.js");
+/* harmony import */ var _functions_cleanSlate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../functions/cleanSlate */ "./functions/cleanSlate.js");
+/* harmony import */ var _pages_home__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pages/home */ "./pages/home.js");
+/* harmony import */ var _pages_menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pages/menu */ "./pages/menu.js");
+/* harmony import */ var _functions_header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../functions/header */ "./functions/header.js");
+/* harmony import */ var _functions_footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../functions/footer */ "./functions/footer.js");
+/* harmony import */ var _pages_about__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../pages/about */ "./pages/about.js");
+
+
 
 
 
@@ -18987,7 +19192,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const header = (0,_functions_header__WEBPACK_IMPORTED_MODULE_9__["default"])();
+    const header = (0,_functions_header__WEBPACK_IMPORTED_MODULE_10__["default"])();
     document.body.prepend(header);
     const homeButton = document.getElementById("homeButton");
     const menuButton = document.getElementById("menuButton");
@@ -18995,10 +19200,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Load Home Page Initially
     loadHomePage();
-    (0,_functions_footer__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    (0,_functions_footer__WEBPACK_IMPORTED_MODULE_11__["default"])();
     if (homeButton) {
         homeButton.addEventListener("click", (e) => {
-            (0,_functions_cleanSlate__WEBPACK_IMPORTED_MODULE_6__["default"])();
+            (0,_functions_cleanSlate__WEBPACK_IMPORTED_MODULE_7__["default"])();
             document.body.prepend(header);
             loadHomePage();
             console.log("click");
@@ -19009,9 +19214,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     if (menuButton) {
         menuButton.addEventListener("click", (e) => {
-            (0,_functions_cleanSlate__WEBPACK_IMPORTED_MODULE_6__["default"])();
-            const menu = (0,_pages_menu__WEBPACK_IMPORTED_MODULE_8__["default"])();
+            (0,_functions_cleanSlate__WEBPACK_IMPORTED_MODULE_7__["default"])();
+            const menu = (0,_pages_menu__WEBPACK_IMPORTED_MODULE_9__["default"])();
             document.getElementById("content").appendChild(menu);
+            console.log("click");
+        });
+    } else {
+        console.error("menuButton not found");
+    }
+    if (aboutButton) {
+        aboutButton.addEventListener("click", (e) => {
+            (0,_functions_cleanSlate__WEBPACK_IMPORTED_MODULE_7__["default"])();
+            const about = (0,_pages_about__WEBPACK_IMPORTED_MODULE_12__["default"])();
+            document.getElementById("content").appendChild(about);
             console.log("click");
         });
     } else {
@@ -19020,11 +19235,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function loadHomePage() {
-    (0,_pages_home__WEBPACK_IMPORTED_MODULE_7__["default"])();
-    initGalleryEvents();
+    (0,_pages_home__WEBPACK_IMPORTED_MODULE_8__["default"])();
+    //initGalleryEvents();
 }
 
-function initGalleryEvents() {
+/*function initGalleryEvents() {
     const track = document.getElementById("gallery");
     if (track) {
         track.dataset.mouseDownAt = "0";
@@ -19080,6 +19295,7 @@ function initGalleryEvents() {
     }
 }
 
+*/
 
 /***/ }),
 
@@ -19168,6 +19384,17 @@ module.exports = __webpack_require__.p + "2b03c7e0d02252c22b00.otf";
 
 "use strict";
 module.exports = __webpack_require__.p + "529ad855cac80462aa7e.otf";
+
+/***/ }),
+
+/***/ "./assets/about.jpg":
+/*!**************************!*\
+  !*** ./assets/about.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "7316a79bb22a91cf7cb8.jpg";
 
 /***/ }),
 

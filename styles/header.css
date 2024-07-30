@@ -31,7 +31,7 @@
     margin-right:auto;
     align-items: center;
 }
-button{
+.navButton{
     background:none;
     border:none;
     font-family: 'Shiny';

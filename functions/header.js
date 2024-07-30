@@ -21,17 +21,20 @@ const headerDiv = (() => {
   buttonContainer.id ="buttonContainer";
   const homeButton = document.createElement("button");
   homeButton.textContent = "Home";
+  homeButton.className = "navButton";
   homeButton.id = "homeButton";
   buttonContainer.appendChild(homeButton);
 
   const menuButton = document.createElement("button");
   menuButton.textContent = "Menu";
   menuButton.id = "menuButton";
+  menuButton.className = "navButton";
   buttonContainer.appendChild(menuButton);
 
   const aboutButton = document.createElement("button");
   aboutButton.textContent = "About";
   aboutButton.id = "aboutButton";
+  aboutButton.className = "navButton";
   buttonContainer.appendChild(aboutButton);
   navigationContainer.appendChild(buttonContainer);
 

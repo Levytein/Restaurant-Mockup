@@ -2,6 +2,7 @@ import _ from 'lodash';
 import '../styles/styles.css';
 import '../styles/header.css';
 import '../styles/home.css';
+import '../styles/about.css';
 import '../styles/footer.css';
 
 import firstLoad from '../functions/firstLoad';
@@ -10,6 +11,7 @@ import homeDiv from '../pages/home';
 import menuDiv from '../pages/menu';
 import headerDiv from '../functions/header';
 import footerDiv from '../functions/footer';
+import aboutDiv from '../pages/about';
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const header = headerDiv();
@@ -42,14 +44,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } else {
         console.error("menuButton not found");
     }
+    if (aboutButton) {
+        aboutButton.addEventListener("click", (e) => {
+            cleanSlate();
+            const about = aboutDiv();
+            document.getElementById("content").appendChild(about);
+            console.log("click");
+        });
+    } else {
+        console.error("menuButton not found");
+    }
 });
 
 function loadHomePage() {
     homeDiv();
-    initGalleryEvents();
+    //initGalleryEvents();
 }
 
-function initGalleryEvents() {
+/*function initGalleryEvents() {
     const track = document.getElementById("gallery");
     if (track) {
         track.dataset.mouseDownAt = "0";
@@ -104,3 +116,5 @@ function initGalleryEvents() {
         console.error("Gallery element not found in the DOM.");
     }
 }
+
+*/

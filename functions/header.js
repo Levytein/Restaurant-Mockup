@@ -1,4 +1,4 @@
-import Logo from "../assets/Cookie_run_logo.png";
+import Logo from "../assets/Logo.png";
 
 const headerDiv = (() => {
   const header = document.createElement("div");
@@ -13,6 +13,7 @@ const headerDiv = (() => {
   const headerLogo = document.createElement("img");
   headerLogo.src = Logo;
   headerLogo.id = "header-logo";
+  logoContainer.id ="logoWrapper";
   logoContainer.appendChild(headerLogo);
   navigationContainer.appendChild(logoContainer);
 

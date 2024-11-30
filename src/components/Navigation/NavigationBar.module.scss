@@ -1,0 +1,23 @@
+.container{
+    justify-content: center;
+    place-items: center;
+    width:100%;
+    position:fixed;
+    min-height:5rem;
+    color:white;
+    z-index:1;
+    img{
+        max-width:350px;
+    }
+    .navigation{
+        display:flex;
+        gap:6rem;
+        
+        background-color:rgb(190, 172, 219);
+        height:5rem;
+        min-width:30vw;
+        align-items: center;
+        border-radius: 10px;
+        justify-content: center;
+    }
+}

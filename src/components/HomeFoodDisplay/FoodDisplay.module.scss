@@ -1,5 +1,5 @@
 :root{
-    --img-width: 400px;
+    --img-width: 500px;
     --calculate: calc(3 / 2);
 }
 .secondBlock{
@@ -27,7 +27,13 @@
             z-index:2;
 
         }
-
+        .item{
+            &.active{
+                .mainContent{
+                    animation: showContent 1s ease-in-out 1 forwards;
+                }
+            }
+        }
 
         }
     }
@@ -39,14 +45,22 @@
         width:100%;
         height:100%;
         display:none;
-        &.food1{
-            background-color: burlywood;
+        background: var(--initial-color, transparent); /* Use the initial color or transparent if not set */
+
+        // Define colors for each slide
+        &.food1 {
+          --initial-color: burlywood;
+          --target-color: purple;
         }
-        &.food2{
-            background-color: black;
+      
+        &.food2 {
+          --initial-color: purple;
+          --target-color: rgb(66, 131, 192);
         }
-        &.food3{
-            background-color: grey;
+      
+        &.food3 {
+          --initial-color: rgb(66, 131, 192);
+          --target-color: burlywood;
         }
         &.active{
             z-index: 2;
@@ -63,11 +77,11 @@
                 
                 display: grid;
                 grid-template-columns: 60% 40%;
-                animation: showContent 1s ease-in-out 1 forwards;
+               
 
                 .content{
                     padding: 150px 20px  20px 80px;
-
+                    z-index:3;
                 }
                 .productInfo{
                     display:flex;
@@ -113,7 +127,7 @@
     .item{
         &.active{
             .image{
-                --transform-form: var(--calculate);
+                --transform-from: var(--img-width);
 
             }
         }
@@ -122,7 +136,7 @@
 
             .image{
                 z-index:3;
-                --transform-form:0px;
+                --transform-from:0px;
                 overflow:hidden;
 
             }
@@ -131,7 +145,7 @@
 
             .image{
                 z-index: 3;
-                --transform-form: calc(var(--img-width) * 2);
+                --transform-from: calc(var(--img-width) * 2);
             }
         }
         img,figcaption{
@@ -140,33 +154,35 @@
     }
 }
 .prev{
-
-    .item{
-        &.active{
-            .image{
-                --transform-form: calc(var(--img-width) * -1);
-                overflow: hidden;
-            }
-        }
-        &.other1{
-            .image{
-                --transform-form: 0px;
-                z-index: 3;
-            }
-        }
-        &.other2{
-            .image{
-                z-index: 3;
-                --transform-form:var(--img-width);
-            }
-            .mainContent{
-                opacity:0;
-            }
-        }
-        img,figcaption{
-            animation: effectPrev 0.5s ease-in-out 1 forwards;
-            
-        }
+    .list{
+        .item{
+                &.active{
+                    .image{
+                        --transform-from: calc(var(--img-width) * -1);
+                        overflow: hidden;
+                    }
+                }
+                &.other1{
+                    .image{
+                        --transform-from: 0px;
+                        z-index: 3;
+                    }
+                }
+                &.other2{
+                    .image{
+                        z-index: 3;
+                        --transform-from:var(--img-width);
+                    }
+                    .mainContent{
+                        opacity:0;
+                    }
+                }
+                .image{
+                    img,figcaption{
+                        animation: effectPrev 0.5s ease-in-out 1 forwards;
+                    }
+                }
+    }
     }
 }
 .image{
@@ -182,7 +198,7 @@
     align-items: center;
     font-weight: 500;
     img{
-        width:400px;
+        height:400px;
         margin-bottom:20px;
         filter:drop-shadow(0 0px 50px #9e0c0c55);
     }
@@ -199,9 +215,9 @@
 
     @keyframes effectNext{
     from{
-        transform: translateX(calc(var(--transform-form)));
+        transform: translateX(calc(var(--transform-from)));
     }to{
-        transform: translateX(calc(var(--transform-form) - var(--img-width)));
+        transform: translateX(calc(var(--transform-from) - var(--img-width)));
     }
 }
     @keyframes effectPrev{
@@ -212,10 +228,13 @@
         }
     }
     @keyframes showContent{
-        from{
-            clip-path: circle(0% at 70% 50%);
-        }to{
-            clip-path: circle(100% at 70% 50%);
-        }
+        from {
+            clip-path: circle(0% at 75% 50%);
+            background-color: var(--initial-color); /* Default initial color */
+          }
+          to {
+            clip-path: circle(110% at 75% 50%);
+            background-color: var(--target-color); /* Default target color */
+          }
     }
 }

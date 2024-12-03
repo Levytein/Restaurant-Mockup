@@ -1,5 +1,6 @@
 import styles from './FoodDisplay.module.scss'
 import milkyway from '../../assets/milkyAnimation.gif'
+import milkywayDrink from '../../assets/milkyWayFood.png'
 import { useState, useEffect,useRef} from 'react';
 function FoodDisplay(){
     const itemsRef = useRef<HTMLDivElement[]>([]); 
@@ -9,8 +10,9 @@ function FoodDisplay(){
     const countItem = 3;
     const items =  [
     { imgSrc: `${milkyway}`, caption: 'Item 1' },
-    { imgSrc: `${milkyway}`, caption: 'Item 2' },
-    { imgSrc: `${milkyway}`, caption: 'Item 3' }
+    { imgSrc: `${milkywayDrink}`, caption: 'Item 2' },
+    { imgSrc: `${milkyway}`, caption: 'Item 3' },
+    { imgSrc: `${milkywayDrink}`, caption: 'Item 4' }
     ]; 
 
     let autoPlay: number;
@@ -19,15 +21,11 @@ function FoodDisplay(){
     const autoPlayRef = useRef<number | null>(null);    
     useEffect(() => {
      
-        autoPlay = setInterval(() => {
-          handleNext();
-        }, 5000);
+       startAutoPlay();
     
-        // Cleanup interval on unmount
-        return () => clearInterval(autoPlay);
-      }, [active]);
+        return () => clearAutoPlay();
+      }, []);
     
-    // Function to reset animations
     const resetAnimation = (element: HTMLElement | null) => {
       if (element) {
         element.style.animation = 'none';
@@ -61,9 +59,6 @@ function FoodDisplay(){
             const img = imgRefs.current[index];
             const figcaption = figcaptionRefs.current[index];
         
-            console.log('Image ref:', img);
-            console.log('Figcaption ref:', figcaption);
-        
             if (img) resetAnimation(img);
             if (figcaption) resetAnimation(figcaption);
         });
@@ -72,6 +67,7 @@ function FoodDisplay(){
       startAutoPlay();
     };
     const startAutoPlay = () => {
+        clearAutoPlay();
         autoPlayRef.current = window.setInterval(() => {
             handleNext();
           }, 5000);
@@ -114,11 +110,7 @@ function FoodDisplay(){
                           ref={(el) => {
                             if (el) {
                               itemsRef.current[index] = el as HTMLDivElement;
-                              const img = el.querySelector<HTMLImageElement>(`${styles.image} img`);
-                              const figcaption = el.querySelector<HTMLElement>(`${styles.image} figcaption`);
-                              // You can directly access img and figcaption here after the element is rendered
-                              resetAnimation(img);
-                              resetAnimation(figcaption);
+                  
                             }
                           }}   >
                             <div className={styles.mainContent}> 
@@ -144,7 +136,7 @@ function FoodDisplay(){
                             >{item.caption}</figcaption>
                           </figure>
                         </article>
-                    ))};
+                    ))}
                   
                 </div>
                 <div className={styles.arrows}>

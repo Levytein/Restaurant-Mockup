@@ -5,7 +5,7 @@
     position:fixed;
     min-height:5rem;
     color:white;
-    z-index:1;
+    z-index:3;
     img{
         max-width:350px;
     }
@@ -19,5 +19,15 @@
         align-items: center;
         border-radius: 10px;
         justify-content: center;
+        h2{
+            transition:transform 0.3s ease-in-out;
+
+        }
+        h2:hover{
+            transform: scale(1.5);
+            text-shadow:0 0 5px white,  
+            0 0 10px white,  
+            0 0 15px #A78BFA;
+        }
     }
 }

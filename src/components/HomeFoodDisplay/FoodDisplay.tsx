@@ -4,15 +4,14 @@ import milkywayDrink from '../../assets/milkyWayFood.png'
 import { useState, useEffect,useRef} from 'react';
 function FoodDisplay(){
     const itemsRef = useRef<HTMLDivElement[]>([]); 
-    const [active, setActive] = useState(0);
-    const [other1, setOther1] = useState(1);
-    const [other2, setOther2] = useState(2);
+    const [active, setActive] = useState(1);
+    const [other1, setOther1] = useState(2);
+    const [other2, setOther2] = useState(0);
     const countItem = 3;
     const items =  [
     { imgSrc: `${milkyway}`, caption: 'Item 1' },
     { imgSrc: `${milkywayDrink}`, caption: 'Item 2' },
     { imgSrc: `${milkyway}`, caption: 'Item 3' },
-    { imgSrc: `${milkywayDrink}`, caption: 'Item 4' }
     ]; 
 
     let autoPlay: number;

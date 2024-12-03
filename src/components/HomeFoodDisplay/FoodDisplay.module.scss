@@ -21,8 +21,7 @@
             top:0;
             height:100%;
             left:calc(100% - calc(var(--img-width) * var(--calculate)));
-            border-left:1px solid white;
-            border-right:1px solid white;
+   
             pointer-events:none;
             z-index:2;
 
@@ -132,8 +131,6 @@
             }
         }
         &.other1{
-            z-index: 1;
-
             .image{
                 z-index:3;
                 --transform-from:0px;
@@ -190,7 +187,7 @@
     width:var(--img-width);
     height:100%;
     position:absolute;
-    left: calc(100% - calc(var(--img-width) * var(--calculate)));
+    left: calc(100% - calc(var(--img-width)* var(--calculate)));
     top:0%;
     padding:20px;
     flex-direction:column;

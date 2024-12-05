@@ -131,6 +131,7 @@
             }
         }
         &.other1{
+            z-index:1;
             .image{
                 z-index:3;
                 --transform-from:0px;
@@ -139,7 +140,7 @@
             }
         }
         &.other2{
-
+            z-index:1;
             .image{
                 z-index: 3;
                 --transform-from: calc(var(--img-width) * 2);
@@ -197,7 +198,7 @@
     img{
         height:400px;
         margin-bottom:20px;
-        filter:drop-shadow(0 0px 50px #9e0c0c55);
+        filter:drop-shadow(0 0px 10px white);
     }
     figcaption{
     font-weight:bold;

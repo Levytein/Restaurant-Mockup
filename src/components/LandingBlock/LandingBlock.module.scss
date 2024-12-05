@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Kidsland'; 
+  src: url('../../assets/fonts/Staywork-Regular.woff2') format('woff2'); /* TTF format */
+
+}
 .firstBlock{
     background-image:url('../../assets/MilkyBG.webp');
     width:100%;
@@ -6,6 +11,7 @@
     .milkyway{
       animation: milkyAnimation 2s ease-in-out forwards;
       transform:scale(0);
+      //filter:drop-shadow(0 0px 25px white);
       @keyframes milkyAnimation {
         0% {
           transform: scale(0);
@@ -16,6 +22,52 @@
         100%{
           transform: scale(.9);
         }
+      }
+    }
+    .infoText{
+      display:flex;
+      visibility: hidden;
+      flex-direction:column;
+      z-index: 2;
+      width:80%;
+      background-color: rgb(219, 172, 200);
+      border:8px solid rgb(190, 172, 219);
+      border-radius:15px;
+      text-shadow:none;
+      max-height:500px;
+      animation: growAnimation 1s ease-in-out forwards 9s;
+      font-family: 'Kidsland', sans-serif;
+      
+
+      .infoButtonContainer{
+        width:100%;
+        justify-content: center;
+        display:flex;
+        gap: 5vw;
+        margin-top:3rem;
+        button{
+          font-size:2rem;
+          border-radius: 15px;
+          border:none;
+          background-color:rgb(190, 172, 219);
+          padding:20px;
+        }
+      }
+      .welcomeText{
+        font-size:7rem;
+        text-align: center;
+        justify-content: center;
+        text-shadow: 0 0 5px white,  
+        0 0 6px rgb(190, 172, 219);
+        max-height:100px;
+        
+      }
+      .welcomeInfo{
+        font-size:3rem;
+        width:95%;
+        margin-left:5%;
+        height:30%;
+        line-height:1.2;
       }
     }
 }
@@ -42,14 +94,37 @@
     .firstBlockText{
         display:flex;
         flex-direction:column;
+        width:100%;
         margin-top:6rem;
         position:relative;
         text-shadow: 0 0 5px white,  
         0 0 10px white,  
         0 0 15px #A78BFA;
+
+      
         .firstBlockAnimationContainer{
-            min-height:300px;
+            min-height:500px;
             width:100%;
+
+            animation: slideRight .6s ease-in-out forwards 8s;
+
+            @keyframes slideRight{
+              0%{
+                
+              }
+              
+              90%{
+                transform: translateX(50vw);
+                
+              }
+              95%{
+              
+              }
+              100%{
+                opacity: 0%;
+                visibility: hidden; 
+              }
+            }
             .isWord,.nowWord{
                 font-size:7rem;
                 position:absolute;
@@ -60,27 +135,15 @@
                 animation: growAnimation .6s ease-in-out forwards;
                 transform:scale(0);
                 left:30%;
-                @keyframes growAnimation {
-                  0% {
-                    transform: scale(0);
-                  }
-                  100% {
-                    transform: scale(1);
-                  }
-                }
+                top:25%;
+              
             }
                 .nowWord{
                     animation: growAnimation .4s ease-in-out forwards 1.2s;
                     left:50%;
+                    top:25%;
                     transform:scale(0);
-                    @keyframes growAnimation {
-                      0% {
-                        transform: scale(0);
-                      }
-                      100% {
-                        transform: scale(1);
-                      }
-                    }
+                  
                 }
             .openWord{
                 text-shadow: 0 0 5px white,  
@@ -90,35 +153,43 @@
                 font-size:12rem;
                 font-weight:bold;
                 animation: growAnimation .6s ease-in-out forwards 2.0s,rotateAnimation 10s ease-in-out infinite 3s;
-                top:30%;
+                top:45%;
                 left:15%;
                 transform:scale(0);
-                @keyframes growAnimation {
-                  0% {
-                    transform: scale(0);
-                  }
-                  100% {
-                    transform: scale(1);
-                  }
-                }
-                @keyframes rotateAnimation {
-                    0% {
-                        transform: rotate(0deg);
-                      }
-                      25% {
-                        transform: rotate(10deg);
-                      }
-                      50% {
-                        transform: rotate(0deg);
-                      }
-                      75% {
-                        transform: rotate(-10deg);
-                      }
-                      100% {
-                        transform: rotate(0deg);
-                  }
-                }
+              
+               
             }
         }
     }
+}
+:global{
+  @keyframes growAnimation {
+    0% {
+      visibility: visible;
+      transform: scale(0);
+    }
+    100% {
+      visibility: visible;
+
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(10deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      75% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+  }
+}
 }

@@ -1,6 +1,7 @@
 import styles from './FoodDisplay.module.scss'
-import milkyway from '../../assets/milkyAnimation.gif'
+import moonlightDrink from '../../assets/moonlightFood.png'
 import milkywayDrink from '../../assets/milkyWayFood.png'
+import vanillaFood from '../../assets/stardust.png'
 import { useState, useEffect,useRef} from 'react';
 function FoodDisplay(){
     const itemsRef = useRef<HTMLDivElement[]>([]); 
@@ -9,9 +10,9 @@ function FoodDisplay(){
     const [other2, setOther2] = useState(0);
     const countItem = 3;
     const items =  [
-    { imgSrc: `${milkyway}`, caption: 'Item 1' },
-    { imgSrc: `${milkywayDrink}`, caption: 'Item 2' },
-    { imgSrc: `${milkyway}`, caption: 'Item 3' },
+    { imgSrc: `${milkywayDrink}`, caption: 'Milkyway Cloud Milk',foodDescription:"Milkyway Cloud Milk", price:"4.99", description:"Smooth butterfly pea milk tea topped with a fluffy almond cream cloud." },
+    { imgSrc: `${moonlightDrink}`, caption: 'Moonlight Invitation from the Slumbering Moon',foodDescription:"Moonlight Invitation from the Slumbering Moon", price:"5.99", description:"Refreshing and sweet mocktail made with lychee, sparkling lemonade, and blue spirulina." },
+    { imgSrc: `${vanillaFood}`, caption: 'Stardust Moon Jelly',foodDescription:"Stardust Moon Jelly", price:"4.99", description:"A fresh take on your favorite jelly dessert - flavored with strawberry, sparkling soda, and blue spirulina, topped with edible glitter and coconut flakes." },
     ]; 
 
     let autoPlay: number;
@@ -115,9 +116,9 @@ function FoodDisplay(){
                             <div className={styles.mainContent}> 
                                 <div className={styles.content}>
                                     <div className={styles.productInfo}>
-                                    <h2>Name of Product</h2>
-                                    <p className={styles.price}>$20</p>
-                                    <p className={styles.description}>a lotatate</p>
+                                    <h2>{items[index].caption}</h2>
+                                    <p className={styles.price}>{items[index].price}</p>
+                                    <p className={styles.description}>{items[index].description}</p>
                                 </div>
                             </div>
                         </div>

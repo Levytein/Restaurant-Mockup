@@ -19,11 +19,13 @@
         align-items: center;
         border-radius: 10px;
         justify-content: center;
-        h2{
+        a{
             transition:transform 0.3s ease-in-out;
-
+            color:white;
+            font-size:1.5rem;
+            font-weight:600;
         }
-        h2:hover{
+        a:hover{
             transform: scale(1.5);
             text-shadow:0 0 5px white,  
             0 0 10px white,  

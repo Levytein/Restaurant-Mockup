@@ -32,15 +32,49 @@ return (
     <div className={styles.openWord}>Open!</div>
 </div>
 </div>
+<div className={styles.infoContainer}>
+<h2 className={styles.welcomeText}>Welcome!</h2>
 <div className={styles.infoText}>
-    <h2 className={styles.welcomeText}>Welcome!</h2>
-    <p className={styles.welcomeInfo}>We've opened a new location that takes inspiration from all the fan favorites in Cookie Run:Kingdom! We hope you enjoy our desserts and drinks!</p>
-    <div className={styles.infoButtonContainer}>
-        <button className={styles.infoButton}>View Menu</button>
-        <button className={styles.infoButton}>Order Pickup</button>
-    </div>
+
+    <div className={styles.hours}>
+            <h2>Hours of Operation</h2>
+            <div className={styles.listContainer}>
+              <div className={styles.listHours}>
+                <div className={styles.addressText}>
+            <ul>
+                <li>MON-THURS: 11am to 8pm</li>
+                <li>FRI: 11am to 9pm</li>
+                <li>SAT: 9am to 9pm</li>
+                <li>SUN: 9am to 8pm</li>
+            </ul>
+            </div>
+            <div className={styles.infoButtonContainer}>
+            <button className={styles.infoButton}>View Menu</button>
+            </div>
+            </div>
+            <div className={styles.divider}></div>
+            <div className={styles.listAddress}>
+              <div className={styles.addressText}>
+              <h3>
+                Address
+              </h3>
+              <p>1313 Disneyland Dr Anaheim CA 92802</p>
+              </div>
+              <div className={styles.infoButtonContainer}>
+    
+    <button className={styles.orderButton}>Order Pickup</button>
 </div>
+          </div>
+            </div>
+        
+        </div>
+        
+        </div>
+     
 </div>
+
+</div>
+
 
 </div>
 </div>)

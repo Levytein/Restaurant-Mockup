@@ -1,18 +1,21 @@
 import styles from './FoodDisplay.module.scss'
 import moonlightDrink from '../../assets/moonlightFood.png'
 import milkywayDrink from '../../assets/milkyWayFood.png'
-import vanillaFood from '../../assets/stardust.png'
-import { useState, useEffect,useRef} from 'react';
+import stardustFood from '../../assets/stardust.png'
+import vanillaFood from '../../assets/purevanillafood.png'
+import { useEffect,useRef} from 'react';
 function FoodDisplay(){
     const itemsRef = useRef<HTMLDivElement[]>([]); 
-    const [active, setActive] = useState(1);
-    const [other1, setOther1] = useState(2);
-    const [other2, setOther2] = useState(0);
-    const countItem = 3;
+    const activeRef = useRef(1); // Active index (starts at 1)
+    const other1Ref = useRef<number | null>(null); // Previous item
+    const other2Ref = useRef<number | null>(null);
+    const countItem = 4;
     const items =  [
-    { imgSrc: `${milkywayDrink}`, caption: 'Milkyway Cloud Milk',foodDescription:"Milkyway Cloud Milk", price:"4.99", description:"Smooth butterfly pea milk tea topped with a fluffy almond cream cloud." },
-    { imgSrc: `${moonlightDrink}`, caption: 'Moonlight Invitation from the Slumbering Moon',foodDescription:"Moonlight Invitation from the Slumbering Moon", price:"5.99", description:"Refreshing and sweet mocktail made with lychee, sparkling lemonade, and blue spirulina." },
-    { imgSrc: `${vanillaFood}`, caption: 'Stardust Moon Jelly',foodDescription:"Stardust Moon Jelly", price:"4.99", description:"A fresh take on your favorite jelly dessert - flavored with strawberry, sparkling soda, and blue spirulina, topped with edible glitter and coconut flakes." },
+    { imgSrc: `${milkywayDrink}`, caption: 'Milkyway Cloud Milk 1',foodDescription:"Milkyway Cloud Milk", price:"4.99", description:"Smooth butterfly pea milk tea topped with a fluffy almond cream cloud." },
+    { imgSrc: `${moonlightDrink}`, caption: 'Moonlight Invitation from the Slumbering Moon 2',foodDescription:"Moonlight Invitation from the Slumbering Moon", price:"5.99", description:"Refreshing and sweet mocktail made with lychee, sparkling lemonade, and blue spirulina." },
+    { imgSrc: `${stardustFood}`, caption: 'Stardust Moon Jelly 3',foodDescription:"Stardust Moon Jelly", price:"4.99", description:"A fresh take on your favorite jelly dessert - flavored with strawberry, sparkling soda, and blue spirulina, topped with edible glitter and coconut flakes." },
+    { imgSrc: `${vanillaFood}`, caption: 'Pure Vanilla Soft Serve 4',foodDescription:"Stardust Moon Jelly", price:"4.99", description:"Delicate and velvety soft serve made with vanilla bean and rich Hokkaido Milk." },
+
     ]; 
 
     let autoPlay: number;
@@ -38,19 +41,19 @@ function FoodDisplay(){
         itemsRef.current.forEach((item, index) => {
             if (!item) return;
         
-            if (index === active) {
+            if (index === activeRef.current) {
               item.classList.add(`${styles.active}`);
             } else {
               item.classList.remove(`${styles.active}`);
             }
         
-            if (index === other1) {
+            if (index === other1Ref.current) {
               item.classList.add(`${styles.other1}`);
             } else {
               item.classList.remove(`${styles.other1}`);
             }
         
-            if (index === other2) {
+            if (index === other2Ref.current) {
               item.classList.add(`${styles.other2}`);
             } else {
               item.classList.remove(`${styles.other2}`);
@@ -81,23 +84,23 @@ function FoodDisplay(){
       };
   
       const handleNext = () => {
-        setActive((prev) => (prev + 1 >= countItem ? 0 : prev + 1));
-        setOther1((prev) => (prev + 1 >= countItem ? 0 : prev + 1));
-        setOther2((prev) => (prev + 1 >= countItem ? 0 : prev + 1));
+        activeRef.current = activeRef.current + 1 >= countItem ? 0 : activeRef.current + 1;
+        other1Ref.current = activeRef.current - 1 < 0 ? countItem - 1 : activeRef.current - 1;
+        other2Ref.current = activeRef.current + 1 >= countItem ? 0 : activeRef.current + 1;
         changeSlider();
       };
     
       const handlePrev = () => {
-        setActive((prev) => (prev - 1 < 0 ? countItem - 1 : prev - 1));
-        setOther1((prev) => (prev - 1 < 0 ? countItem - 1 : prev - 1));
-        setOther2((prev) => (prev - 1 < 0 ? countItem - 1 : prev - 1));
+        activeRef.current = activeRef.current - 1 < 0 ? countItem - 1 : activeRef.current - 1;
+        other1Ref.current = activeRef.current + 1 >= countItem ? 0 : activeRef.current + 1;
+        other2Ref.current = other1Ref.current! + 1 >= countItem ? 0 : other1Ref.current! + 1;
         changeSlider();
       };
     
       const getItemClass = (index: number) => {
-        if (index === active) return `${styles.item} ${styles.active}`;
-        if (index === other1) return `${styles.item} ${styles.other1}`;
-        if (index === other2) return `${styles.item} ${styles.other2}`;
+        if (index === activeRef.current) return `${styles.item} ${styles.active}`;
+        if (index === other1Ref.current) return `${styles.item} ${styles.other1}`;
+        if (index === other2Ref.current) return `${styles.item} ${styles.other2}`;
         return styles.item;
       };
 
@@ -137,11 +140,11 @@ function FoodDisplay(){
                           </figure>
                         </article>
                     ))}
-                  
+                 
                 </div>
-                <div className={styles.arrows}>
-                    <button className={styles.prev} onClick={handlePrev}></button>
-                    <button className={styles.next} onClick={handleNext}></button>
+                 <div className={styles.arrows}>
+                    <button className={styles.prev} onClick={handlePrev}>{'<'}</button>
+                    <button className={styles.next} onClick={handleNext}>{'>'}</button>
 
                 </div>
 

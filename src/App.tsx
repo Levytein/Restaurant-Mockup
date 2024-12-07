@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.scss'
 import { Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/Navigation/NavigationBar'

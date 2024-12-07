@@ -18,7 +18,6 @@ function FoodDisplay(){
 
     ]; 
 
-    let autoPlay: number;
     const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
     const figcaptionRefs = useRef<(HTMLElement | null)[]>([]);
     const autoPlayRef = useRef<number | null>(null);    

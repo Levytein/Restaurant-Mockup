@@ -11,8 +11,11 @@ $navHeight:178.16px;
     width:100%;
     justify-content: center;
     background-image:url('../../assets/MilkyBG.webp');
+    background-repeat: no-repeat;
     padding-bottom:50px;
+    background-attachment: fixed;
 }
+
 .overlay{
     position: absolute;
     top: 0;

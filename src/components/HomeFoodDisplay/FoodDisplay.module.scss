@@ -1,320 +1,383 @@
-:root{
-    --img-width: 290px;
-    --calculate: calc(3 / 2);
+:root {
+	--img-width: 290px;
+	--img-width-desktop: 500px;
+	--calculate: calc(3 / 2);
 }
-@media screen and (min-width:400px){
-    .productInfo{
-  
-        h2{
-            font-size: 3rem;
-        }
-        .price{
-            font-size: 2rem;
-            margin: 20px 0;
-        }
-        .description{
-            display:none;
-        }
-    }
-    .content{
-            padding:0px;
-            width:100%;
-            justify-content: center;
-            text-align: center;
-            .productInfo{
-                align-items: center;
-                h2{
-                    font-size:1.5rem;
+@media screen and (min-width: 400px) {
+	.productInfo {
+		h2 {
+			font-size: 3rem;
+		}
+		.price {
+			font-size: 2rem;
+			margin: 20px 0;
+		}
+		.description {
+			display: none;
+		}
+	}
+	.content {
+		padding: 0px;
+		width: 100%;
+		justify-content: center;
+		text-align: center;
+		.productInfo {
+			align-items: center;
+			h2 {
+				font-size: 1.5rem;
+			}
+		}
+	}
+	.mainContent {
+		grid-template-columns: 100%;
+		grid-template-rows: 20% 80%;
+	}
+	.list {
+		height: 100%;
+		position: relative;
 
-                }
-            }
-    }
-    .mainContent{
+		&:before {
+			position: absolute;
+			width: var(--img-width);
+			content: "";
+			top: 0;
+			height: 100%;
+			left: calc(100% - calc(var(--img-width) * var(--calculate)));
 
-        grid-template-columns: 100%;
-        grid-template-rows: 20% 80%;
-    }
-    .list{
-        height:100%;
-        position:relative;
+			pointer-events: none;
+			z-index: 2;
+		}
+	}
+    .image {
+		left: calc(100% - calc(var(--img-width) * var(--calculate)));
+	}
+	.arrows {
+		left: calc(100% - calc(var(--img-width) * var(--calculate)));
 
-        &:before{
-            position:absolute;
-            width:var(--img-width);
-            content:'';
-            top:0;
-            height:100%;
-            left:calc(100% - calc(var(--img-width) * var(--calculate)));
-   
-            pointer-events:none;
-            z-index:2;
-
-        }
-    }
-    .arrows{
-        left:calc(100% - calc(var(--img-width) * var(--calculate) + 50px));
-
-        gap: 300px;
-}
-}
-@media screen and (min-width:800px){
-    .content{
-        padding: 150px 20px  20px 80px;
-        z-index:3;
-
-}
-.mainContent{
-
-    grid-template-columns: 60% 40%;
-}
-}
-.secondBlock{
-    width:100%;
-    height:700px;
-    position: relative;
-}
-.carousel{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    .list{
-        height:100%;
-        position:relative;
-
-        &:before{
-            position:absolute;
-            width:var(--img-width);
-            content:'';
-            top:0;
-            height:100%;
-            left:calc(100% - calc(var(--img-width) * var(--calculate)));
-   
-            pointer-events:none;
-            z-index:2;
-
-        }
-        .item{
-            &.active{
-                .mainContent{
-                    animation: showContent 1s ease-in-out 1 forwards;
-                }
-            }
-        }
-
-        }
-    }
-  
-    .item{
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        display:none;
-        background: var(--initial-color, transparent); /* Use the initial color or transparent if not set */
-
-        // Define colors for each slide
-        &.food1 {
-          --initial-color: burlywood;
-          --target-color: purple;
-        }
-      
-        &.food2 {
-          --initial-color: purple;
-          --target-color: rgb(66, 131, 192);
-        }
-      
-        &.food3 {
-          --initial-color: rgb(66, 131, 192);
-          --target-color: burlywood;
-          img{
-            max-height:150px;
-          }
-        }
-        &.food4 {
-            --initial-color: rgb(66, 131, 192);
-            --target-color: grey;
-            img{
-                max-height:150px;
-              }
-          }
-        &.active{
-            z-index: 2;
-        }
-        &.other1,&.other2,&.active{
-            display:block;
-        }
-        &.other1,&.other2{
-            pointer-events: none;
-        }
-       
-            .mainContent{
-                height: 100%;
-                
-                display: grid;
-               
-
-                .content{
-               
-                    z-index:3;
-                }
-                .productInfo{
-                    display:flex;
-                    flex-direction: column;
-                    h2{
-                  
-                    }
-                    .price{
-                       
-                        margin: 20px 0;
-                    }
-                }
-
-            }
-        }
-.arrows{
-        position: absolute;
-        top:50%;
-        display: flex;
-        
-
-        justify-content: end;
-    
-        z-index:2;
-        button{
-            background-color: transparent;
-            border:none;
-            border-radius:100px;
-            width:100px;
-            height:100px;
-            font-size: 4rem;
-            font-weight: bold;
-            
-        
-            cursor: pointer;
-            transition: 0.5s;
-            &:hover{
-                background-color: #eee5;
-            }
-            
-        }
-}
-.next {
-    .item{
-        &.active{
-            .image{
-                --transform-from: var(--img-width);
-
-            }
-        }
-        &.other1{
-            
-            .content{
-                z-index:1;
-            }
-            .image{
-                z-index:3;
-                --transform-from:0px;
-                overflow:hidden;
-
-            }
-        }
-        &.other2{
-            .content{
-                z-index:1;
-            }
-            .image{
-                z-index: 3;
-                --transform-from: calc(var(--img-width) * 2);
-            }
-        }
-        img,figcaption{
-            animation: effectNext .5s ease-in-out 1 forwards;
-            }
-    }
-}
-.prev{
-    .list{
-        .item{
+		gap: 300px;
+	}
+    .next {
+            .item{
                 &.active{
                     .image{
-                        --transform-from: calc(var(--img-width) * -1);
-                        overflow: hidden;
-                    }
-                }
-                &.other1{
-                    .image{
-                        --transform-from: 0px;
-                        z-index: 3;
+                        --transform-from: var(--img-width);
+        
                     }
                 }
                 &.other2{
+               
                     .image{
-                        z-index: 3;
-                        --transform-from:var(--img-width);
-                    }
-                    .mainContent{
-                        opacity:0;
+                        --transform-from: calc(var(--img-width) * 2);
                     }
                 }
+               
+            }
+        
+        img,
+		figcaption {
+			animation: effectNextMobile 0.5s ease-in-out 1 forwards;
+		}
+    }
+}
+@media screen and (min-width: 800px) {
+	.content {
+		padding: 150px 20px 20px 80px;
+		z-index: 3;
+	}
+	.arrows {
+		left: calc(100% - calc(var(--img-width-desktop) * var(--calculate) + 50px));
+
+		gap: 300px;
+	}
+	.mainContent {
+		grid-template-columns: 60% 40%;
+	}
+	.list {
+		&:before {
+			width: var(--img-width-desktop);
+			left: calc(100% - calc(var(--img-width-desktop) * var(--calculate)));
+		}
+	}
+	.image {
+		left: calc(100% - calc(var(--img-width-desktop) * var(--calculate)));
+	}
+    .next {
+        .item{
+            &.active{
                 .image{
-                    img,figcaption{
-                        animation: effectPrev 0.5s ease-in-out 1 forwards;
-                    }
+                    --transform-from: var(--img-width-desktop);
+    
                 }
-    }
-    }
-}
-.image{
-    display:flex;
-    width:var(--img-width);
-    height:100%;
-    position:absolute;
-    left: calc(100% - calc(var(--img-width)* var(--calculate)));
-    top:0%;
-    padding:20px;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
-    img{
-        height:400px;
-        margin-bottom:20px;
-        filter:drop-shadow(0 0px 10px white);
-    }
-    figcaption{
-    font-weight:bold;
-    font-size:1.3rem;
-    text-align:center;
-    margin-bottom:30px;
-    width:70%;
-    }
-}
-
-:global{
-
-    @keyframes effectNext{
-    from{
-        transform: translateX(calc(var(--transform-from)));
-    }to{
-        transform: translateX(calc(var(--transform-from) - var(--img-width)));
-    }
-}
-    @keyframes effectPrev{
-        from{
-            transform: translateX(calc(var(--transform-from)));
-        }to{
-            transform: translateX(calc(var(--transform-from) + var(--img-width)));
+            }
+            &.other2{
+           
+                .image{
+                    --transform-from: calc(var(--img-width-desktop) * 2);
+                }
+            }
+           
         }
+        img,
+		figcaption {
+			animation: effectNext 0.5s ease-in-out 1 forwards;
+		}
     }
-    @keyframes showContent{
-        from {
-            clip-path: circle(0% at 75% 50%);
-            background-color: var(--initial-color); /* Default initial color */
-          }
-          to {
-            clip-path: circle(110% at 75% 50%);
-            background-color: var(--target-color); /* Default target color */
-          }
-    }
+}
+.secondBlock {
+	width: 100%;
+	height: 700px;
+	position: relative;
+}
+.carousel {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	.list {
+		height: 100%;
+		position: relative;
+
+		&:before {
+			position: absolute;
+
+			content: "";
+			top: 0;
+			height: 100%;
+
+			pointer-events: none;
+			z-index: 2;
+		}
+		.item {
+			&.active {
+				.mainContent {
+					animation: showContent 1s ease-in-out 1 forwards;
+				}
+			}
+		}
+	}
+}
+
+.item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background: var(
+		--initial-color,
+		transparent
+	); /* Use the initial color or transparent if not set */
+
+	// Define colors for each slide
+	&.food1 {
+		--initial-color: burlywood;
+		--target-color: purple;
+	}
+
+	&.food2 {
+		--initial-color: purple;
+		--target-color: rgb(66, 131, 192);
+	}
+
+	&.food3 {
+		--initial-color: rgb(66, 131, 192);
+		--target-color: burlywood;
+		img {
+			max-height: 150px;
+		}
+	}
+	&.food4 {
+		--initial-color: rgb(66, 131, 192);
+		--target-color: grey;
+		img {
+			max-height: 150px;
+		}
+	}
+	&.active {
+		z-index: 2;
+	}
+	&.other1,
+	&.other2,
+	&.active {
+		display: block;
+	}
+	&.other1,
+	&.other2 {
+		pointer-events: none;
+	}
+
+	.mainContent {
+		height: 100%;
+
+		display: grid;
+
+		.content {
+			z-index: 3;
+		}
+		.productInfo {
+			display: flex;
+			flex-direction: column;
+			h2 {
+			}
+			.price {
+				margin: 20px 0;
+			}
+		}
+	}
+}
+.arrows {
+	position: absolute;
+	top: 50%;
+	display: flex;
+
+	justify-content: end;
+
+	z-index: 2;
+	button {
+		background-color: transparent;
+		border: none;
+		border-radius: 100px;
+		width: 100px;
+		height: 100px;
+		font-size: 4rem;
+		font-weight: bold;
+
+		cursor: pointer;
+		transition: 0.5s;
+		&:hover {
+			background-color: #eee5;
+		}
+	}
+}
+.next {
+	.item {
+		&.active {
+			.image {
+	
+			}
+		}
+		&.other1 {
+			.content {
+				z-index: 1;
+			}
+			.image {
+				z-index: 3;
+				--transform-from: 0px;
+				overflow: hidden;
+			}
+		}
+		&.other2 {
+			.content {
+				z-index: 1;
+			}
+			.image {
+				z-index: 3;
+		
+			}
+		}
+		
+	}
+}
+.prev {
+	.list {
+		.item {
+			&.active {
+				.image {
+					--transform-from: calc(var(--img-width) * -1);
+					overflow: hidden;
+				}
+			}
+			&.other1 {
+				.image {
+					--transform-from: 0px;
+					z-index: 3;
+				}
+			}
+			&.other2 {
+				.image {
+					z-index: 3;
+					--transform-from: var(--img-width);
+				}
+				.mainContent {
+					opacity: 0;
+				}
+			}
+			.image {
+				img,
+				figcaption {
+					animation: effectPrev 0.5s ease-in-out 1 forwards;
+				}
+			}
+		}
+	}
+}
+.image {
+	display: flex;
+	width: var(--img-width);
+	height: 100%;
+	position: absolute;
+
+	top: 0%;
+	padding: 20px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	img {
+		height: 400px;
+		margin-bottom: 20px;
+		filter: drop-shadow(0 0px 10px white);
+	}
+	figcaption {
+		font-weight: bold;
+		font-size: 1.3rem;
+		text-align: center;
+		margin-bottom: 30px;
+		width: 70%;
+	}
+}
+
+:global {
+    @keyframes effectNextMobile {
+		from {
+			transform: translateX(calc(var(--transform-from)));
+		}
+		to {
+			transform: translateX(calc(var(--transform-from) - var(--img-width)));
+		}
+	}
+	@keyframes effectPrevMobile {
+		from {
+			transform: translateX(calc(var(--transform-from)));
+		}
+		to {
+			transform: translateX(calc(var(--transform-from) + var(--img-width)));
+		}
+	}
+	@keyframes effectNext {
+		from {
+			transform: translateX(calc(var(--transform-from)));
+		}
+		to {
+			transform: translateX(calc(var(--transform-from) - var(--img-width-desktop)));
+		}
+	}
+	@keyframes effectPrev {
+		from {
+			transform: translateX(calc(var(--transform-from)));
+		}
+		to {
+			transform: translateX(calc(var(--transform-from) + var(--img-width-desktop)));
+		}
+	}
+	@keyframes showContent {
+		from {
+			clip-path: circle(0% at 75% 50%);
+			background-color: var(--initial-color); /* Default initial color */
+		}
+		to {
+			clip-path: circle(110% at 75% 50%);
+			background-color: var(--target-color); /* Default target color */
+		}
+	}
 }

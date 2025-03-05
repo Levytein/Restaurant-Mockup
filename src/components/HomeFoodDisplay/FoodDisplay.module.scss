@@ -1,6 +1,72 @@
 :root{
-    --img-width: 500px;
+    --img-width: 290px;
     --calculate: calc(3 / 2);
+}
+@media screen and (min-width:400px){
+    .productInfo{
+  
+        h2{
+            font-size: 3rem;
+        }
+        .price{
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        .description{
+            display:none;
+        }
+    }
+    .content{
+            padding:0px;
+            width:100%;
+            justify-content: center;
+            text-align: center;
+            .productInfo{
+                align-items: center;
+                h2{
+                    font-size:1.5rem;
+
+                }
+            }
+    }
+    .mainContent{
+
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+    }
+    .list{
+        height:100%;
+        position:relative;
+
+        &:before{
+            position:absolute;
+            width:var(--img-width);
+            content:'';
+            top:0;
+            height:100%;
+            left:calc(100% - calc(var(--img-width) * var(--calculate)));
+   
+            pointer-events:none;
+            z-index:2;
+
+        }
+    }
+    .arrows{
+        left:calc(100% - calc(var(--img-width) * var(--calculate) + 50px));
+
+        gap: 300px;
+}
+}
+@media screen and (min-width:800px){
+    .content{
+        padding: 150px 20px  20px 80px;
+        z-index:3;
+
+}
+.mainContent{
+
+    grid-template-columns: 60% 40%;
+}
 }
 .secondBlock{
     width:100%;
@@ -86,21 +152,20 @@
                 height: 100%;
                 
                 display: grid;
-                grid-template-columns: 60% 40%;
                
 
                 .content{
-                    padding: 150px 20px  20px 80px;
+               
                     z-index:3;
                 }
                 .productInfo{
                     display:flex;
                     flex-direction: column;
                     h2{
-                        font-size: 5em;
+                  
                     }
                     .price{
-                        font-size: 3em;
+                       
                         margin: 20px 0;
                     }
                 }
@@ -109,14 +174,13 @@
         }
 .arrows{
         position: absolute;
-        left:calc(100% - calc(var(--img-width) * var(--calculate) - 10px));
         top:50%;
         display: flex;
         
 
         justify-content: end;
-        gap: 400px;
-        z-index:10;
+    
+        z-index:2;
         button{
             background-color: transparent;
             border:none;

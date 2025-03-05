@@ -21,7 +21,9 @@ return (
 <div className={styles.overlay} ></div>
 
 <div className={styles.content}>
+  <div className={styles.imageContainer}>
 <img className={styles.milkyway} src={milkyway} alt ="Logo" />
+</div>
 <div className={styles.firstBlockText}>
 
 <div>

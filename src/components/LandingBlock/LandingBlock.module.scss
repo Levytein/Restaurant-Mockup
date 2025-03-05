@@ -6,6 +6,85 @@
   font-family: 'Blocky'; 
   src: url('../../assets/fonts/Queensides-3z7Ey.ttf') format('truetype'); /* TTF format */
 }
+
+@media screen and (min-width:400px) {
+   .content{
+    flex-direction: column;
+    align-items: center;
+   }
+   .firstBlockText{
+    width:95%;
+   }
+   .imageContainer{
+    position: absolute;
+    z-index:100;
+    top:-50px;
+   }
+   .hours{
+    h2{
+      font-size:3rem;
+    }
+    li{
+      font-size:1.7rem;
+      margin-left:0;
+    }
+   }
+   .infoButtonContainer{
+    button{
+      font-size:1.5rem;
+    }
+   }
+   h1{
+    justify-content: center;
+   }
+   .addressText,.listHours{
+
+    
+    min-height:236px;
+  }
+  .isWord,.nowWord{
+    font-size:4rem;
+  }
+  .openWord{
+    font-size:7rem;
+    top:45%;
+    left:18%;
+  }
+  .isWord{
+    left:10%;
+    top:10%;
+  
+}
+    .nowWord{
+        left:40%;
+        top:10%;   
+    }
+
+}
+
+@media screen and (min-width:800px) {
+  .content{
+    flex-direction: row;
+  }
+  .imageContainer{
+    position: static;
+  }
+  .firstBlockText{
+    width:50%;
+   }
+   .hours{
+    h2{
+      font-size:6rem;
+    }
+    li{
+      font-size:2rem;
+      margin-left:2rem;
+    }
+   }
+   h1{
+    font-size:4rem;
+   }
+}
 .hours{
   display:flex;
   flex-direction: column;
@@ -46,7 +125,7 @@
         display:flex;
         flex-direction: column;
         
-        min-height:225px;
+
       }
       h3{
         font-size: 3rem;
@@ -59,7 +138,7 @@
     }
   }
   h2{
-      font-size:6rem;
+ 
      
   }
   ul{
@@ -69,9 +148,8 @@
 
   }
   li{
-      font-size:2rem;
       list-style:disc;
-      margin-left:2rem;
+
   }
 }
 .firstBlock{
@@ -79,9 +157,15 @@
     width:100%;
     overflow:hidden;
     height:100vh;
-    .milkyway{
-      animation: milkyAnimation 2s ease-in-out forwards;
+    .imageContainer{
       width:50%;
+      align-items: center;
+    }
+    .milkyway{
+      display:block;
+      animation: milkyAnimation 2s ease-in-out forwards;
+      max-width:100%;
+      height:auto;
       transform:scale(0);
       //filter:drop-shadow(0 0px 25px white);
       @keyframes milkyAnimation {
@@ -159,7 +243,7 @@
     width:100%;
 
     h1{
-        font-size: 4rem;
+
         text-shadow: 0 0 5px white,  
         0 0 10px white,  
         0 0 15px #A78BFA;
@@ -167,7 +251,7 @@
     .firstBlockText{
         display:flex;
         flex-direction:column;
-        width:50%;
+
         margin-top:6rem;
         position:relative;
    
@@ -179,7 +263,7 @@
           gap: 5vw;
         
           button{
-            font-size:2rem;
+       
             border-radius: 15px;
             border:none;
             background-color:rgb(190, 172, 219);
@@ -197,7 +281,7 @@
         .firstBlockAnimationContainer{
             min-height:500px;
             width:100%;
-
+            display: block;
             animation: slideRight .6s ease-in-out forwards 8s;
 
            
@@ -212,14 +296,11 @@
             .isWord{
                 animation: growAnimation .6s ease-in-out forwards;
                 transform:scale(0);
-                left:30%;
-                top:25%;
-              
+               
             }
                 .nowWord{
                     animation: growAnimation .4s ease-in-out forwards 1.2s;
-                    left:50%;
-                    top:25%;
+                
                     transform:scale(0);
                   
                 }
@@ -228,11 +309,10 @@
                 0 0 10px white,  
                 0 0 15px #A78BFA;
                 position:absolute;
-                font-size:12rem;
+        
                 font-weight:bold;
                 animation: growAnimation .6s ease-in-out forwards 2.0s,rotateAnimation 10s ease-in-out infinite 3s;
-                top:45%;
-                left:15%;
+            
                 transform:scale(0);
               
                

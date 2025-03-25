@@ -6,6 +6,8 @@
 }
 @media screen and (min-width: 400px) {
 	.productInfo {
+		visibility: hidden;
+		/*
 		h2 {
 			font-size: 3rem;
 		}
@@ -15,7 +17,7 @@
 		}
 		.description {
 			display: none;
-		}
+		}*/
 	}
 	.content {
 		padding: 0px;

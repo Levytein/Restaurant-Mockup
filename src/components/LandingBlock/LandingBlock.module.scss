@@ -30,8 +30,12 @@
     }
    }
    .infoButtonContainer{
+    height:100%;
+    justify-self: flex-end;
+    align-items:flex-end;
     button{
       font-size:1.5rem;
+      max-height:50px;
     }
    }
    h1{
@@ -69,6 +73,11 @@
   .imageContainer{
     position: static;
   }
+  .firstBlockAnimationContainer{
+    h1{
+      margin-top:8rem;
+    }
+  }
   .firstBlockText{
     width:50%;
    }
@@ -84,6 +93,20 @@
    h1{
     font-size:4rem;
    }
+   .openWord{
+    font-size:7rem;
+    top:100%;
+    left:29%;
+  }
+  .isWord{
+    left:25%;
+    top:60%;
+  
+}
+    .nowWord{
+        left:45%;
+        top:60%;   
+    }
 }
 .hours{
   display:flex;
